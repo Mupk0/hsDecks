@@ -1,0 +1,906 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		632F2C743C5F29517954F714 /* Pods_hsDecks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9114E972D716537D46013A3 /* Pods_hsDecks.framework */; };
+		EF0169B6246B30E200D70230 /* DecksByClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0169B5246B30E200D70230 /* DecksByClassViewController.swift */; };
+		EF0169B8246B312F00D70230 /* DecksByClassViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0169B7246B312F00D70230 /* DecksByClassViewModel.swift */; };
+		EF0169BA246B339D00D70230 /* CardClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0169B9246B339D00D70230 /* CardClassViewController.swift */; };
+		EF628804245F3BDD00C693A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF628803245F3BDD00C693A4 /* Assets.xcassets */; };
+		EF727147246031D3001820D0 /* DeckDetailViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF727146246031D3001820D0 /* DeckDetailViewContoller.swift */; };
+		EF727149246036B3001820D0 /* SerializedDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF727148246036B3001820D0 /* SerializedDeck.swift */; };
+		EF72714C24603F8B001820D0 /* DeckDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF72714B24603F8B001820D0 /* DeckDetailTableViewCell.swift */; };
+		EF72714E24607106001820D0 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF72714D24607106001820D0 /* UILabel.swift */; };
+		EF745743245F2D4100A9C9F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF745742245F2D4100A9C9F8 /* AppDelegate.swift */; };
+		EF745745245F2D4100A9C9F8 /* DeckListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF745744245F2D4100A9C9F8 /* DeckListViewController.swift */; };
+		EF74574D245F2D4100A9C9F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF74574B245F2D4100A9C9F8 /* LaunchScreen.storyboard */; };
+		EF745758245F2D4200A9C9F8 /* hsDecksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF745757245F2D4200A9C9F8 /* hsDecksTests.swift */; };
+		EF745763245F2D4200A9C9F8 /* hsDecksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF745762245F2D4200A9C9F8 /* hsDecksUITests.swift */; };
+		EF745773245F2EAE00A9C9F8 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF745772245F2EAE00A9C9F8 /* String.swift */; };
+		EF745775245F2ECD00A9C9F8 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF745774245F2ECD00A9C9F8 /* Array.swift */; };
+		EF745778245F2EE700A9C9F8 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF745777245F2EE700A9C9F8 /* Card.swift */; };
+		EF74577B245F2F2A00A9C9F8 /* CardClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF74577A245F2F2A00A9C9F8 /* CardClass.swift */; };
+		EF74577D245F2F5500A9C9F8 /* CardSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF74577C245F2F5500A9C9F8 /* CardSet.swift */; };
+		EF74577F245F2FA500A9C9F8 /* CardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF74577E245F2FA500A9C9F8 /* CardType.swift */; };
+		EF745781245F2FBB00A9C9F8 /* Rarity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF745780245F2FBB00A9C9F8 /* Rarity.swift */; };
+		EF745783245F2FDC00A9C9F8 /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF745782245F2FDC00A9C9F8 /* Race.swift */; };
+		EF745786245F301200A9C9F8 /* Varint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF745785245F301200A9C9F8 /* Varint.swift */; };
+		EF745789245F307D00A9C9F8 /* DeckSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF745788245F307D00A9C9F8 /* DeckSerializer.swift */; };
+		EF74578B245F309300A9C9F8 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF74578A245F309300A9C9F8 /* Cards.swift */; };
+		EF74578E245F315C00A9C9F8 /* CardsEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF74578D245F315C00A9C9F8 /* CardsEncoder.swift */; };
+		EF745790245F31F400A9C9F8 /* cards.json in Resources */ = {isa = PBXBuildFile; fileRef = EF74578F245F31F400A9C9F8 /* cards.json */; };
+		EF8C5CA124688010000778C7 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8C5CA024688010000778C7 /* ViewConfiguration.swift */; };
+		EF8C5CA324689B3D000778C7 /* DeckAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8C5CA224689B3D000778C7 /* DeckAddViewController.swift */; };
+		EF8C5CA52469433C000778C7 /* NewDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8C5CA42469433C000778C7 /* NewDeck.swift */; };
+		EF8C5CA724699CC2000778C7 /* DeckTypeSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8C5CA624699CC2000778C7 /* DeckTypeSections.swift */; };
+		EFFAD45E2460928C00BCA4A5 /* DeckDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD45D2460928C00BCA4A5 /* DeckDetailViewModel.swift */; };
+		EFFAD4602460B33D00BCA4A5 /* DeckListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD45F2460B33D00BCA4A5 /* DeckListTableViewCell.swift */; };
+		EFFAD4632461E64100BCA4A5 /* DeckListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD4622461E64100BCA4A5 /* DeckListViewModel.swift */; };
+		EFFAD4652462028200BCA4A5 /* DeckTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD4642462028200BCA4A5 /* DeckTypeViewController.swift */; };
+		EFFAD467246297B500BCA4A5 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD466246297B500BCA4A5 /* Dictionary.swift */; };
+		EFFAD46B2462A00800BCA4A5 /* DeckDetailTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD46A2462A00800BCA4A5 /* DeckDetailTableViewCellViewModel.swift */; };
+		EFFAD46D2462A5DA00BCA4A5 /* ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD46C2462A5DA00BCA4A5 /* ObservableType.swift */; };
+		EFFAD46F2462BC1400BCA4A5 /* DeckListTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD46E2462BC1300BCA4A5 /* DeckListTableViewCellViewModel.swift */; };
+		EFFAD8472463437C00BCA4A5 /* hsDecks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD8452463437C00BCA4A5 /* hsDecks.xcdatamodeld */; };
+		EFFAD851246344FB00BCA4A5 /* Deck+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD850246344FB00BCA4A5 /* Deck+CoreDataClass.swift */; };
+		EFFAD8532463451300BCA4A5 /* Deck+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD8522463451300BCA4A5 /* Deck+CoreDataProperties.swift */; };
+		EFFAD855246345C900BCA4A5 /* DeckDataAccessProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD854246345C900BCA4A5 /* DeckDataAccessProvider.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EF745754245F2D4200A9C9F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF745737245F2D4000A9C9F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF74573E245F2D4100A9C9F8;
+			remoteInfo = hsDecks;
+		};
+		EF74575F245F2D4200A9C9F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF745737245F2D4000A9C9F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF74573E245F2D4100A9C9F8;
+			remoteInfo = hsDecks;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C0499E1B978407EECFC44883 /* Pods-hsDecks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hsDecks.debug.xcconfig"; path = "Target Support Files/Pods-hsDecks/Pods-hsDecks.debug.xcconfig"; sourceTree = "<group>"; };
+		C827E3413C2A0731F627A394 /* Pods-hsDecks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hsDecks.release.xcconfig"; path = "Target Support Files/Pods-hsDecks/Pods-hsDecks.release.xcconfig"; sourceTree = "<group>"; };
+		C9114E972D716537D46013A3 /* Pods_hsDecks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hsDecks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF0169B5246B30E200D70230 /* DecksByClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksByClassViewController.swift; sourceTree = "<group>"; };
+		EF0169B7246B312F00D70230 /* DecksByClassViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksByClassViewModel.swift; sourceTree = "<group>"; };
+		EF0169B9246B339D00D70230 /* CardClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardClassViewController.swift; sourceTree = "<group>"; };
+		EF628803245F3BDD00C693A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF727146246031D3001820D0 /* DeckDetailViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailViewContoller.swift; sourceTree = "<group>"; };
+		EF727148246036B3001820D0 /* SerializedDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerializedDeck.swift; sourceTree = "<group>"; };
+		EF72714B24603F8B001820D0 /* DeckDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailTableViewCell.swift; sourceTree = "<group>"; };
+		EF72714D24607106001820D0 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		EF74573F245F2D4100A9C9F8 /* hsDecks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hsDecks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF745742245F2D4100A9C9F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EF745744245F2D4100A9C9F8 /* DeckListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckListViewController.swift; sourceTree = "<group>"; };
+		EF74574C245F2D4100A9C9F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EF74574E245F2D4100A9C9F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF745753245F2D4200A9C9F8 /* hsDecksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hsDecksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF745757245F2D4200A9C9F8 /* hsDecksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hsDecksTests.swift; sourceTree = "<group>"; };
+		EF745759245F2D4200A9C9F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF74575E245F2D4200A9C9F8 /* hsDecksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hsDecksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF745762245F2D4200A9C9F8 /* hsDecksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hsDecksUITests.swift; sourceTree = "<group>"; };
+		EF745764245F2D4200A9C9F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF745772245F2EAE00A9C9F8 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		EF745774245F2ECD00A9C9F8 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		EF745777245F2EE700A9C9F8 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		EF74577A245F2F2A00A9C9F8 /* CardClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardClass.swift; sourceTree = "<group>"; };
+		EF74577C245F2F5500A9C9F8 /* CardSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSet.swift; sourceTree = "<group>"; };
+		EF74577E245F2FA500A9C9F8 /* CardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardType.swift; sourceTree = "<group>"; };
+		EF745780245F2FBB00A9C9F8 /* Rarity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rarity.swift; sourceTree = "<group>"; };
+		EF745782245F2FDC00A9C9F8 /* Race.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Race.swift; sourceTree = "<group>"; };
+		EF745785245F301200A9C9F8 /* Varint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Varint.swift; sourceTree = "<group>"; };
+		EF745788245F307D00A9C9F8 /* DeckSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckSerializer.swift; sourceTree = "<group>"; };
+		EF74578A245F309300A9C9F8 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
+		EF74578D245F315C00A9C9F8 /* CardsEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsEncoder.swift; sourceTree = "<group>"; };
+		EF74578F245F31F400A9C9F8 /* cards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cards.json; sourceTree = "<group>"; };
+		EF8C5CA024688010000778C7 /* ViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
+		EF8C5CA224689B3D000778C7 /* DeckAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckAddViewController.swift; sourceTree = "<group>"; };
+		EF8C5CA42469433C000778C7 /* NewDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeck.swift; sourceTree = "<group>"; };
+		EF8C5CA624699CC2000778C7 /* DeckTypeSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTypeSections.swift; sourceTree = "<group>"; };
+		EFFAD45D2460928C00BCA4A5 /* DeckDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailViewModel.swift; sourceTree = "<group>"; };
+		EFFAD45F2460B33D00BCA4A5 /* DeckListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckListTableViewCell.swift; sourceTree = "<group>"; };
+		EFFAD4622461E64100BCA4A5 /* DeckListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckListViewModel.swift; sourceTree = "<group>"; };
+		EFFAD4642462028200BCA4A5 /* DeckTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTypeViewController.swift; sourceTree = "<group>"; };
+		EFFAD466246297B500BCA4A5 /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		EFFAD46A2462A00800BCA4A5 /* DeckDetailTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		EFFAD46C2462A5DA00BCA4A5 /* ObservableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableType.swift; sourceTree = "<group>"; };
+		EFFAD46E2462BC1300BCA4A5 /* DeckListTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckListTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		EFFAD8462463437C00BCA4A5 /* hsDecks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = hsDecks.xcdatamodel; sourceTree = "<group>"; };
+		EFFAD850246344FB00BCA4A5 /* Deck+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataClass.swift"; sourceTree = "<group>"; };
+		EFFAD8522463451300BCA4A5 /* Deck+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EFFAD854246345C900BCA4A5 /* DeckDataAccessProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDataAccessProvider.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EF74573C245F2D4100A9C9F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				632F2C743C5F29517954F714 /* Pods_hsDecks.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF745750245F2D4200A9C9F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF74575B245F2D4200A9C9F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3CB82245815E423E4766866D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9114E972D716537D46013A3 /* Pods_hsDecks.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EBBD31EB561E5A7B59C73FE5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C0499E1B978407EECFC44883 /* Pods-hsDecks.debug.xcconfig */,
+				C827E3413C2A0731F627A394 /* Pods-hsDecks.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EF203D152460238B00C3604D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EF74574B245F2D4100A9C9F8 /* LaunchScreen.storyboard */,
+				EF628803245F3BDD00C693A4 /* Assets.xcassets */,
+				EFFAD8452463437C00BCA4A5 /* hsDecks.xcdatamodeld */,
+				EF74578F245F31F400A9C9F8 /* cards.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EF72714524603150001820D0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EFFAD4642462028200BCA4A5 /* DeckTypeViewController.swift */,
+				EF0169B9246B339D00D70230 /* CardClassViewController.swift */,
+				EF745744245F2D4100A9C9F8 /* DeckListViewController.swift */,
+				EF0169B5246B30E200D70230 /* DecksByClassViewController.swift */,
+				EF8C5CA224689B3D000778C7 /* DeckAddViewController.swift */,
+				EF727146246031D3001820D0 /* DeckDetailViewContoller.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EF72714A24603F74001820D0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EFFAD45F2460B33D00BCA4A5 /* DeckListTableViewCell.swift */,
+				EF72714B24603F8B001820D0 /* DeckDetailTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EF745736245F2D4000A9C9F8 = {
+			isa = PBXGroup;
+			children = (
+				EF745741245F2D4100A9C9F8 /* hsDecks */,
+				EF745756245F2D4200A9C9F8 /* hsDecksTests */,
+				EF745761245F2D4200A9C9F8 /* hsDecksUITests */,
+				EF745740245F2D4100A9C9F8 /* Products */,
+				EBBD31EB561E5A7B59C73FE5 /* Pods */,
+				3CB82245815E423E4766866D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EF745740245F2D4100A9C9F8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF74573F245F2D4100A9C9F8 /* hsDecks.app */,
+				EF745753245F2D4200A9C9F8 /* hsDecksTests.xctest */,
+				EF74575E245F2D4200A9C9F8 /* hsDecksUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EF745741245F2D4100A9C9F8 /* hsDecks */ = {
+			isa = PBXGroup;
+			children = (
+				EF745776245F2EDB00A9C9F8 /* Models */,
+				EF72714A24603F74001820D0 /* Views */,
+				EFFAD4612461E61F00BCA4A5 /* ViewModels */,
+				EF72714524603150001820D0 /* Controllers */,
+				EF745779245F2F1E00A9C9F8 /* Enums */,
+				EF745771245F2EA200A9C9F8 /* Extensions */,
+				EF8C5C9F24688002000778C7 /* Protocols */,
+				EFFAD8562463582000BCA4A5 /* Storage */,
+				EF745787245F304D00A9C9F8 /* Helper */,
+				EF745770245F2E6A00A9C9F8 /* Support */,
+				EF203D152460238B00C3604D /* Resources */,
+			);
+			path = hsDecks;
+			sourceTree = "<group>";
+		};
+		EF745756245F2D4200A9C9F8 /* hsDecksTests */ = {
+			isa = PBXGroup;
+			children = (
+				EF745757245F2D4200A9C9F8 /* hsDecksTests.swift */,
+				EF745759245F2D4200A9C9F8 /* Info.plist */,
+			);
+			path = hsDecksTests;
+			sourceTree = "<group>";
+		};
+		EF745761245F2D4200A9C9F8 /* hsDecksUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EF745762245F2D4200A9C9F8 /* hsDecksUITests.swift */,
+				EF745764245F2D4200A9C9F8 /* Info.plist */,
+			);
+			path = hsDecksUITests;
+			sourceTree = "<group>";
+		};
+		EF745770245F2E6A00A9C9F8 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				EF745742245F2D4100A9C9F8 /* AppDelegate.swift */,
+				EF74574E245F2D4100A9C9F8 /* Info.plist */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		EF745771245F2EA200A9C9F8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EF745772245F2EAE00A9C9F8 /* String.swift */,
+				EF745774245F2ECD00A9C9F8 /* Array.swift */,
+				EFFAD466246297B500BCA4A5 /* Dictionary.swift */,
+				EF72714D24607106001820D0 /* UILabel.swift */,
+				EFFAD46C2462A5DA00BCA4A5 /* ObservableType.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EF745776245F2EDB00A9C9F8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EF745777245F2EE700A9C9F8 /* Card.swift */,
+				EF727148246036B3001820D0 /* SerializedDeck.swift */,
+				EF8C5CA42469433C000778C7 /* NewDeck.swift */,
+				EFFAD850246344FB00BCA4A5 /* Deck+CoreDataClass.swift */,
+				EFFAD8522463451300BCA4A5 /* Deck+CoreDataProperties.swift */,
+				EF8C5CA624699CC2000778C7 /* DeckTypeSections.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EF745779245F2F1E00A9C9F8 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				EF74577A245F2F2A00A9C9F8 /* CardClass.swift */,
+				EF74577C245F2F5500A9C9F8 /* CardSet.swift */,
+				EF74577E245F2FA500A9C9F8 /* CardType.swift */,
+				EF745780245F2FBB00A9C9F8 /* Rarity.swift */,
+				EF745782245F2FDC00A9C9F8 /* Race.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		EF745787245F304D00A9C9F8 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				EFFAD45C24608E5800BCA4A5 /* Cards */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		EF8C5C9F24688002000778C7 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EF8C5CA024688010000778C7 /* ViewConfiguration.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		EFFAD45C24608E5800BCA4A5 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				EF745785245F301200A9C9F8 /* Varint.swift */,
+				EF74578D245F315C00A9C9F8 /* CardsEncoder.swift */,
+				EF745788245F307D00A9C9F8 /* DeckSerializer.swift */,
+				EF74578A245F309300A9C9F8 /* Cards.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		EFFAD4612461E61F00BCA4A5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				EFFAD45D2460928C00BCA4A5 /* DeckDetailViewModel.swift */,
+				EFFAD4622461E64100BCA4A5 /* DeckListViewModel.swift */,
+				EFFAD46E2462BC1300BCA4A5 /* DeckListTableViewCellViewModel.swift */,
+				EF0169B7246B312F00D70230 /* DecksByClassViewModel.swift */,
+				EFFAD46A2462A00800BCA4A5 /* DeckDetailTableViewCellViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		EFFAD8562463582000BCA4A5 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				EFFAD854246345C900BCA4A5 /* DeckDataAccessProvider.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EF74573E245F2D4100A9C9F8 /* hsDecks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF745767245F2D4200A9C9F8 /* Build configuration list for PBXNativeTarget "hsDecks" */;
+			buildPhases = (
+				9E68CAE931F63D03F1CD5498 /* [CP] Check Pods Manifest.lock */,
+				EF74573B245F2D4100A9C9F8 /* Sources */,
+				EF74573C245F2D4100A9C9F8 /* Frameworks */,
+				EF74573D245F2D4100A9C9F8 /* Resources */,
+				A0AAE55FBAA580BC93941B71 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = hsDecks;
+			productName = hsDecks;
+			productReference = EF74573F245F2D4100A9C9F8 /* hsDecks.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EF745752245F2D4200A9C9F8 /* hsDecksTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF74576A245F2D4200A9C9F8 /* Build configuration list for PBXNativeTarget "hsDecksTests" */;
+			buildPhases = (
+				EF74574F245F2D4200A9C9F8 /* Sources */,
+				EF745750245F2D4200A9C9F8 /* Frameworks */,
+				EF745751245F2D4200A9C9F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF745755245F2D4200A9C9F8 /* PBXTargetDependency */,
+			);
+			name = hsDecksTests;
+			productName = hsDecksTests;
+			productReference = EF745753245F2D4200A9C9F8 /* hsDecksTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EF74575D245F2D4200A9C9F8 /* hsDecksUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF74576D245F2D4200A9C9F8 /* Build configuration list for PBXNativeTarget "hsDecksUITests" */;
+			buildPhases = (
+				EF74575A245F2D4200A9C9F8 /* Sources */,
+				EF74575B245F2D4200A9C9F8 /* Frameworks */,
+				EF74575C245F2D4200A9C9F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF745760245F2D4200A9C9F8 /* PBXTargetDependency */,
+			);
+			name = hsDecksUITests;
+			productName = hsDecksUITests;
+			productReference = EF74575E245F2D4200A9C9F8 /* hsDecksUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EF745737245F2D4000A9C9F8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = "Dmitry Kulagin";
+				TargetAttributes = {
+					EF74573E245F2D4100A9C9F8 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+					EF745752245F2D4200A9C9F8 = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = EF74573E245F2D4100A9C9F8;
+					};
+					EF74575D245F2D4200A9C9F8 = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = EF74573E245F2D4100A9C9F8;
+					};
+				};
+			};
+			buildConfigurationList = EF74573A245F2D4000A9C9F8 /* Build configuration list for PBXProject "hsDecks" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EF745736245F2D4000A9C9F8;
+			productRefGroup = EF745740245F2D4100A9C9F8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EF74573E245F2D4100A9C9F8 /* hsDecks */,
+				EF745752245F2D4200A9C9F8 /* hsDecksTests */,
+				EF74575D245F2D4200A9C9F8 /* hsDecksUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EF74573D245F2D4100A9C9F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF74574D245F2D4100A9C9F8 /* LaunchScreen.storyboard in Resources */,
+				EF628804245F3BDD00C693A4 /* Assets.xcassets in Resources */,
+				EF745790245F31F400A9C9F8 /* cards.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF745751245F2D4200A9C9F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF74575C245F2D4200A9C9F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9E68CAE931F63D03F1CD5498 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-hsDecks-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0AAE55FBAA580BC93941B71 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hsDecks/Pods-hsDecks-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hsDecks/Pods-hsDecks-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hsDecks/Pods-hsDecks-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EF74573B245F2D4100A9C9F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFFAD46B2462A00800BCA4A5 /* DeckDetailTableViewCellViewModel.swift in Sources */,
+				EF74577B245F2F2A00A9C9F8 /* CardClass.swift in Sources */,
+				EFFAD45E2460928C00BCA4A5 /* DeckDetailViewModel.swift in Sources */,
+				EF74578B245F309300A9C9F8 /* Cards.swift in Sources */,
+				EFFAD4632461E64100BCA4A5 /* DeckListViewModel.swift in Sources */,
+				EF8C5CA124688010000778C7 /* ViewConfiguration.swift in Sources */,
+				EFFAD46F2462BC1400BCA4A5 /* DeckListTableViewCellViewModel.swift in Sources */,
+				EF745773245F2EAE00A9C9F8 /* String.swift in Sources */,
+				EF8C5CA324689B3D000778C7 /* DeckAddViewController.swift in Sources */,
+				EF0169B8246B312F00D70230 /* DecksByClassViewModel.swift in Sources */,
+				EF745775245F2ECD00A9C9F8 /* Array.swift in Sources */,
+				EF0169B6246B30E200D70230 /* DecksByClassViewController.swift in Sources */,
+				EFFAD4652462028200BCA4A5 /* DeckTypeViewController.swift in Sources */,
+				EFFAD851246344FB00BCA4A5 /* Deck+CoreDataClass.swift in Sources */,
+				EF8C5CA724699CC2000778C7 /* DeckTypeSections.swift in Sources */,
+				EF745781245F2FBB00A9C9F8 /* Rarity.swift in Sources */,
+				EF72714C24603F8B001820D0 /* DeckDetailTableViewCell.swift in Sources */,
+				EF745783245F2FDC00A9C9F8 /* Race.swift in Sources */,
+				EF74577D245F2F5500A9C9F8 /* CardSet.swift in Sources */,
+				EF745778245F2EE700A9C9F8 /* Card.swift in Sources */,
+				EF0169BA246B339D00D70230 /* CardClassViewController.swift in Sources */,
+				EFFAD8472463437C00BCA4A5 /* hsDecks.xcdatamodeld in Sources */,
+				EF72714E24607106001820D0 /* UILabel.swift in Sources */,
+				EF74578E245F315C00A9C9F8 /* CardsEncoder.swift in Sources */,
+				EF727149246036B3001820D0 /* SerializedDeck.swift in Sources */,
+				EFFAD4602460B33D00BCA4A5 /* DeckListTableViewCell.swift in Sources */,
+				EF74577F245F2FA500A9C9F8 /* CardType.swift in Sources */,
+				EFFAD8532463451300BCA4A5 /* Deck+CoreDataProperties.swift in Sources */,
+				EF745789245F307D00A9C9F8 /* DeckSerializer.swift in Sources */,
+				EF727147246031D3001820D0 /* DeckDetailViewContoller.swift in Sources */,
+				EF8C5CA52469433C000778C7 /* NewDeck.swift in Sources */,
+				EFFAD46D2462A5DA00BCA4A5 /* ObservableType.swift in Sources */,
+				EFFAD467246297B500BCA4A5 /* Dictionary.swift in Sources */,
+				EFFAD855246345C900BCA4A5 /* DeckDataAccessProvider.swift in Sources */,
+				EF745786245F301200A9C9F8 /* Varint.swift in Sources */,
+				EF745745245F2D4100A9C9F8 /* DeckListViewController.swift in Sources */,
+				EF745743245F2D4100A9C9F8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF74574F245F2D4200A9C9F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF745758245F2D4200A9C9F8 /* hsDecksTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF74575A245F2D4200A9C9F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF745763245F2D4200A9C9F8 /* hsDecksUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EF745755245F2D4200A9C9F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF74573E245F2D4100A9C9F8 /* hsDecks */;
+			targetProxy = EF745754245F2D4200A9C9F8 /* PBXContainerItemProxy */;
+		};
+		EF745760245F2D4200A9C9F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF74573E245F2D4100A9C9F8 /* hsDecks */;
+			targetProxy = EF74575F245F2D4200A9C9F8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EF74574B245F2D4100A9C9F8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF74574C245F2D4100A9C9F8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EF745765245F2D4200A9C9F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EF745766245F2D4200A9C9F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EF745768245F2D4200A9C9F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0499E1B978407EECFC44883 /* Pods-hsDecks.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HNZG8PLWWM;
+				INFOPLIST_FILE = "$(SRCROOT)/hsDecks/Support/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ru.home.hsDecks;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		EF745769245F2D4200A9C9F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C827E3413C2A0731F627A394 /* Pods-hsDecks.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HNZG8PLWWM;
+				INFOPLIST_FILE = "$(SRCROOT)/hsDecks/Support/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ru.home.hsDecks;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		EF74576B245F2D4200A9C9F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HNZG8PLWWM;
+				INFOPLIST_FILE = hsDecksTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ru.home.hsDecksTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hsDecks.app/hsDecks";
+			};
+			name = Debug;
+		};
+		EF74576C245F2D4200A9C9F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HNZG8PLWWM;
+				INFOPLIST_FILE = hsDecksTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ru.home.hsDecksTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hsDecks.app/hsDecks";
+			};
+			name = Release;
+		};
+		EF74576E245F2D4200A9C9F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HNZG8PLWWM;
+				INFOPLIST_FILE = hsDecksUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ru.home.hsDecksUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = hsDecks;
+			};
+			name = Debug;
+		};
+		EF74576F245F2D4200A9C9F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HNZG8PLWWM;
+				INFOPLIST_FILE = hsDecksUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ru.home.hsDecksUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = hsDecks;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EF74573A245F2D4000A9C9F8 /* Build configuration list for PBXProject "hsDecks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF745765245F2D4200A9C9F8 /* Debug */,
+				EF745766245F2D4200A9C9F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF745767245F2D4200A9C9F8 /* Build configuration list for PBXNativeTarget "hsDecks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF745768245F2D4200A9C9F8 /* Debug */,
+				EF745769245F2D4200A9C9F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF74576A245F2D4200A9C9F8 /* Build configuration list for PBXNativeTarget "hsDecksTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF74576B245F2D4200A9C9F8 /* Debug */,
+				EF74576C245F2D4200A9C9F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF74576D245F2D4200A9C9F8 /* Build configuration list for PBXNativeTarget "hsDecksUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF74576E245F2D4200A9C9F8 /* Debug */,
+				EF74576F245F2D4200A9C9F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EFFAD8452463437C00BCA4A5 /* hsDecks.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EFFAD8462463437C00BCA4A5 /* hsDecks.xcdatamodel */,
+			);
+			currentVersion = EFFAD8462463437C00BCA4A5 /* hsDecks.xcdatamodel */;
+			path = hsDecks.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EF745737245F2D4000A9C9F8 /* Project object */;
+}
