@@ -45,7 +45,7 @@ extension DeckTypeSections {
         case .AllDecks:
             return DeckListViewController(viewModel: DeckListViewModel())
         case .ByClass:
-            return CardClassViewController()
+            return ClassSelectViewController()
         case .Unknown:
             return UIViewController()
         }

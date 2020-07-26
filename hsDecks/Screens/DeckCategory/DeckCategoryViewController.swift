@@ -1,5 +1,5 @@
 //
-//  DeckTypeViewController.swift
+//  DeckCategoryViewController.swift
 //  hsDecks
 //
 //  Created by Dmitry Kulagin on 05.05.2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DeckTypeViewController: UIViewController {
+class DeckCategoryViewController: UIViewController {
     
     private let tableView = UITableView(frame: .zero, style: .plain)
 
@@ -22,7 +22,7 @@ class DeckTypeViewController: UIViewController {
     }
 }
 
-extension DeckTypeViewController: ViewConfiguration {
+extension DeckCategoryViewController: ViewConfiguration {
     func buildViewHierarchy() {
         view.addSubview(tableView)
     }
@@ -42,14 +42,14 @@ extension DeckTypeViewController: ViewConfiguration {
     func bindViewModel() {}
 }
 
-extension DeckTypeViewController: UITableViewDelegate {
+extension DeckCategoryViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         navigationController?.pushViewController(DeckTypeSections.init(id: indexPath.row).vc, animated: true)
     }
 }
 
-extension DeckTypeViewController: UITableViewDataSource {
+extension DeckCategoryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return DeckTypeSections.allValues.count
     }

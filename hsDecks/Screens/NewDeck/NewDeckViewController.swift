@@ -1,5 +1,5 @@
 //
-//  DeckAddViewController.swift
+//  NewDeckViewController.swift
 //  hsDecks
 //
 //  Created by Dmitry Kulagin on 10.05.2020.
@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class DeckAddViewController: UIViewController {
+class NewDeckViewController: UIViewController {
     
     private let deckNameTextField = UITextField()
     private let deckCodeTextField = UITextField()
@@ -27,7 +27,7 @@ class DeckAddViewController: UIViewController {
     }
 }
 
-extension DeckAddViewController: ViewConfiguration {
+extension NewDeckViewController: ViewConfiguration {
     
     func buildViewHierarchy() {
         view.addSubview(deckNameTextField)

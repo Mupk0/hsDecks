@@ -77,7 +77,7 @@ extension DeckListViewController: ViewConfiguration {
              .subscribe { [weak self] _ in
                 guard let strongSelf = self else { return }
                 
-                let newDeckViewController = DeckAddViewController()
+                let newDeckViewController = NewDeckViewController()
                  
                 newDeckViewController.newDeck.subscribe(onNext :{ [weak self] deck in
                     self?.viewModel.addDeck(deckCode: deck.deckCode, deckName: deck.deckName, deckClass: deck.deckClass)

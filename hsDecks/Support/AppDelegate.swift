@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         CardsEncoder.loadCards()
         
-        window!.rootViewController = UINavigationController(rootViewController: DeckTypeViewController())
+        window!.rootViewController = UINavigationController(rootViewController: DeckCategoryViewController())
         window!.makeKeyAndVisible()
         
         return true

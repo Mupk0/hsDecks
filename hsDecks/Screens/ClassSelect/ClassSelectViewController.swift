@@ -1,5 +1,5 @@
 //
-//  CardClassViewController.swift
+//  ClassSelectViewController.swift
 //  hsDecks
 //
 //  Created by Dmitry Kulagin on 12.05.2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CardClassViewController: UIViewController {
+class ClassSelectViewController: UIViewController {
     
     private let tableView = UITableView(frame: .zero, style: .plain)
 
@@ -22,7 +22,7 @@ class CardClassViewController: UIViewController {
     }
 }
 
-extension CardClassViewController: ViewConfiguration {
+extension ClassSelectViewController: ViewConfiguration {
     func buildViewHierarchy() {
         view.addSubview(tableView)
     }
@@ -42,7 +42,7 @@ extension CardClassViewController: ViewConfiguration {
     func bindViewModel() {}
 }
 
-extension CardClassViewController: UITableViewDelegate {
+extension ClassSelectViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cardClass = CardClass.init(id: indexPath.row).description
@@ -51,7 +51,7 @@ extension CardClassViewController: UITableViewDelegate {
     }
 }
 
-extension CardClassViewController: UITableViewDataSource {
+extension ClassSelectViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return CardClass.allValues.count
     }

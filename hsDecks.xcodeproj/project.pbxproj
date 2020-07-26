@@ -10,7 +10,7 @@
 		632F2C743C5F29517954F714 /* Pods_hsDecks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9114E972D716537D46013A3 /* Pods_hsDecks.framework */; };
 		EF0169B6246B30E200D70230 /* DecksByClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0169B5246B30E200D70230 /* DecksByClassViewController.swift */; };
 		EF0169B8246B312F00D70230 /* DecksByClassViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0169B7246B312F00D70230 /* DecksByClassViewModel.swift */; };
-		EF0169BA246B339D00D70230 /* CardClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0169B9246B339D00D70230 /* CardClassViewController.swift */; };
+		EF0169BA246B339D00D70230 /* ClassSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0169B9246B339D00D70230 /* ClassSelectViewController.swift */; };
 		EF628804245F3BDD00C693A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF628803245F3BDD00C693A4 /* Assets.xcassets */; };
 		EF727147246031D3001820D0 /* DeckDetailViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF727146246031D3001820D0 /* DeckDetailViewContoller.swift */; };
 		EF727149246036B3001820D0 /* SerializedDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF727148246036B3001820D0 /* SerializedDeck.swift */; };
@@ -35,13 +35,13 @@
 		EF74578E245F315C00A9C9F8 /* CardsEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF74578D245F315C00A9C9F8 /* CardsEncoder.swift */; };
 		EF745790245F31F400A9C9F8 /* cards.json in Resources */ = {isa = PBXBuildFile; fileRef = EF74578F245F31F400A9C9F8 /* cards.json */; };
 		EF8C5CA124688010000778C7 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8C5CA024688010000778C7 /* ViewConfiguration.swift */; };
-		EF8C5CA324689B3D000778C7 /* DeckAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8C5CA224689B3D000778C7 /* DeckAddViewController.swift */; };
+		EF8C5CA324689B3D000778C7 /* NewDeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8C5CA224689B3D000778C7 /* NewDeckViewController.swift */; };
 		EF8C5CA52469433C000778C7 /* NewDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8C5CA42469433C000778C7 /* NewDeck.swift */; };
 		EF8C5CA724699CC2000778C7 /* DeckTypeSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8C5CA624699CC2000778C7 /* DeckTypeSections.swift */; };
 		EFFAD45E2460928C00BCA4A5 /* DeckDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD45D2460928C00BCA4A5 /* DeckDetailViewModel.swift */; };
 		EFFAD4602460B33D00BCA4A5 /* DeckListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD45F2460B33D00BCA4A5 /* DeckListTableViewCell.swift */; };
 		EFFAD4632461E64100BCA4A5 /* DeckListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD4622461E64100BCA4A5 /* DeckListViewModel.swift */; };
-		EFFAD4652462028200BCA4A5 /* DeckTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD4642462028200BCA4A5 /* DeckTypeViewController.swift */; };
+		EFFAD4652462028200BCA4A5 /* DeckCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD4642462028200BCA4A5 /* DeckCategoryViewController.swift */; };
 		EFFAD467246297B500BCA4A5 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD466246297B500BCA4A5 /* Dictionary.swift */; };
 		EFFAD46B2462A00800BCA4A5 /* DeckDetailTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD46A2462A00800BCA4A5 /* DeckDetailTableViewCellViewModel.swift */; };
 		EFFAD46D2462A5DA00BCA4A5 /* ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD46C2462A5DA00BCA4A5 /* ObservableType.swift */; };
@@ -75,7 +75,7 @@
 		C9114E972D716537D46013A3 /* Pods_hsDecks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hsDecks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF0169B5246B30E200D70230 /* DecksByClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksByClassViewController.swift; sourceTree = "<group>"; };
 		EF0169B7246B312F00D70230 /* DecksByClassViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksByClassViewModel.swift; sourceTree = "<group>"; };
-		EF0169B9246B339D00D70230 /* CardClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardClassViewController.swift; sourceTree = "<group>"; };
+		EF0169B9246B339D00D70230 /* ClassSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassSelectViewController.swift; sourceTree = "<group>"; };
 		EF628803245F3BDD00C693A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF727146246031D3001820D0 /* DeckDetailViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailViewContoller.swift; sourceTree = "<group>"; };
 		EF727148246036B3001820D0 /* SerializedDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerializedDeck.swift; sourceTree = "<group>"; };
@@ -106,13 +106,13 @@
 		EF74578D245F315C00A9C9F8 /* CardsEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsEncoder.swift; sourceTree = "<group>"; };
 		EF74578F245F31F400A9C9F8 /* cards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cards.json; sourceTree = "<group>"; };
 		EF8C5CA024688010000778C7 /* ViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
-		EF8C5CA224689B3D000778C7 /* DeckAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckAddViewController.swift; sourceTree = "<group>"; };
+		EF8C5CA224689B3D000778C7 /* NewDeckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeckViewController.swift; sourceTree = "<group>"; };
 		EF8C5CA42469433C000778C7 /* NewDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeck.swift; sourceTree = "<group>"; };
 		EF8C5CA624699CC2000778C7 /* DeckTypeSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTypeSections.swift; sourceTree = "<group>"; };
 		EFFAD45D2460928C00BCA4A5 /* DeckDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailViewModel.swift; sourceTree = "<group>"; };
 		EFFAD45F2460B33D00BCA4A5 /* DeckListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckListTableViewCell.swift; sourceTree = "<group>"; };
 		EFFAD4622461E64100BCA4A5 /* DeckListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckListViewModel.swift; sourceTree = "<group>"; };
-		EFFAD4642462028200BCA4A5 /* DeckTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTypeViewController.swift; sourceTree = "<group>"; };
+		EFFAD4642462028200BCA4A5 /* DeckCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCategoryViewController.swift; sourceTree = "<group>"; };
 		EFFAD466246297B500BCA4A5 /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		EFFAD46A2462A00800BCA4A5 /* DeckDetailTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		EFFAD46C2462A5DA00BCA4A5 /* ObservableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableType.swift; sourceTree = "<group>"; };
@@ -177,26 +177,72 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		EF72714524603150001820D0 /* Controllers */ = {
+		EF35494724CE0B1300144BBB /* DeckList */ = {
 			isa = PBXGroup;
 			children = (
-				EFFAD4642462028200BCA4A5 /* DeckTypeViewController.swift */,
-				EF0169B9246B339D00D70230 /* CardClassViewController.swift */,
 				EF745744245F2D4100A9C9F8 /* DeckListViewController.swift */,
-				EF0169B5246B30E200D70230 /* DecksByClassViewController.swift */,
-				EF8C5CA224689B3D000778C7 /* DeckAddViewController.swift */,
-				EF727146246031D3001820D0 /* DeckDetailViewContoller.swift */,
+				EFFAD4622461E64100BCA4A5 /* DeckListViewModel.swift */,
+				EFFAD45F2460B33D00BCA4A5 /* DeckListTableViewCell.swift */,
+				EFFAD46E2462BC1300BCA4A5 /* DeckListTableViewCellViewModel.swift */,
 			);
-			path = Controllers;
+			path = DeckList;
 			sourceTree = "<group>";
 		};
-		EF72714A24603F74001820D0 /* Views */ = {
+		EF35494824CE0B4400144BBB /* DeckDetail */ = {
 			isa = PBXGroup;
 			children = (
-				EFFAD45F2460B33D00BCA4A5 /* DeckListTableViewCell.swift */,
+				EF727146246031D3001820D0 /* DeckDetailViewContoller.swift */,
+				EFFAD45D2460928C00BCA4A5 /* DeckDetailViewModel.swift */,
 				EF72714B24603F8B001820D0 /* DeckDetailTableViewCell.swift */,
+				EFFAD46A2462A00800BCA4A5 /* DeckDetailTableViewCellViewModel.swift */,
 			);
-			path = Views;
+			path = DeckDetail;
+			sourceTree = "<group>";
+		};
+		EF35494924CE0BFE00144BBB /* DecksByClass */ = {
+			isa = PBXGroup;
+			children = (
+				EF0169B5246B30E200D70230 /* DecksByClassViewController.swift */,
+				EF0169B7246B312F00D70230 /* DecksByClassViewModel.swift */,
+			);
+			path = DecksByClass;
+			sourceTree = "<group>";
+		};
+		EF35494A24CE0EFA00144BBB /* DeckCategory */ = {
+			isa = PBXGroup;
+			children = (
+				EFFAD4642462028200BCA4A5 /* DeckCategoryViewController.swift */,
+			);
+			path = DeckCategory;
+			sourceTree = "<group>";
+		};
+		EF35494B24CE0F5900144BBB /* ClassSelect */ = {
+			isa = PBXGroup;
+			children = (
+				EF0169B9246B339D00D70230 /* ClassSelectViewController.swift */,
+			);
+			path = ClassSelect;
+			sourceTree = "<group>";
+		};
+		EF72714524603150001820D0 /* NewDeck */ = {
+			isa = PBXGroup;
+			children = (
+				EF8C5CA224689B3D000778C7 /* NewDeckViewController.swift */,
+			);
+			path = NewDeck;
+			sourceTree = "<group>";
+		};
+		EF72714A24603F74001820D0 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				EF35494A24CE0EFA00144BBB /* DeckCategory */,
+				EF35494B24CE0F5900144BBB /* ClassSelect */,
+				EF35494924CE0BFE00144BBB /* DecksByClass */,
+				EF35494824CE0B4400144BBB /* DeckDetail */,
+				EF35494724CE0B1300144BBB /* DeckList */,
+				EF72714524603150001820D0 /* NewDeck */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		EF745736245F2D4000A9C9F8 = {
@@ -224,10 +270,8 @@
 		EF745741245F2D4100A9C9F8 /* hsDecks */ = {
 			isa = PBXGroup;
 			children = (
+				EF72714A24603F74001820D0 /* Screens */,
 				EF745776245F2EDB00A9C9F8 /* Models */,
-				EF72714A24603F74001820D0 /* Views */,
-				EFFAD4612461E61F00BCA4A5 /* ViewModels */,
-				EF72714524603150001820D0 /* Controllers */,
 				EF745779245F2F1E00A9C9F8 /* Enums */,
 				EF745771245F2EA200A9C9F8 /* Extensions */,
 				EF8C5C9F24688002000778C7 /* Protocols */,
@@ -328,18 +372,6 @@
 				EF74578A245F309300A9C9F8 /* Cards.swift */,
 			);
 			path = Cards;
-			sourceTree = "<group>";
-		};
-		EFFAD4612461E61F00BCA4A5 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				EFFAD45D2460928C00BCA4A5 /* DeckDetailViewModel.swift */,
-				EFFAD4622461E64100BCA4A5 /* DeckListViewModel.swift */,
-				EFFAD46E2462BC1300BCA4A5 /* DeckListTableViewCellViewModel.swift */,
-				EF0169B7246B312F00D70230 /* DecksByClassViewModel.swift */,
-				EFFAD46A2462A00800BCA4A5 /* DeckDetailTableViewCellViewModel.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		EFFAD8562463582000BCA4A5 /* Storage */ = {
@@ -533,11 +565,11 @@
 				EF8C5CA124688010000778C7 /* ViewConfiguration.swift in Sources */,
 				EFFAD46F2462BC1400BCA4A5 /* DeckListTableViewCellViewModel.swift in Sources */,
 				EF745773245F2EAE00A9C9F8 /* String.swift in Sources */,
-				EF8C5CA324689B3D000778C7 /* DeckAddViewController.swift in Sources */,
+				EF8C5CA324689B3D000778C7 /* NewDeckViewController.swift in Sources */,
 				EF0169B8246B312F00D70230 /* DecksByClassViewModel.swift in Sources */,
 				EF745775245F2ECD00A9C9F8 /* Array.swift in Sources */,
 				EF0169B6246B30E200D70230 /* DecksByClassViewController.swift in Sources */,
-				EFFAD4652462028200BCA4A5 /* DeckTypeViewController.swift in Sources */,
+				EFFAD4652462028200BCA4A5 /* DeckCategoryViewController.swift in Sources */,
 				EFFAD851246344FB00BCA4A5 /* Deck+CoreDataClass.swift in Sources */,
 				EF8C5CA724699CC2000778C7 /* DeckTypeSections.swift in Sources */,
 				EF745781245F2FBB00A9C9F8 /* Rarity.swift in Sources */,
@@ -545,7 +577,7 @@
 				EF745783245F2FDC00A9C9F8 /* Race.swift in Sources */,
 				EF74577D245F2F5500A9C9F8 /* CardSet.swift in Sources */,
 				EF745778245F2EE700A9C9F8 /* Card.swift in Sources */,
-				EF0169BA246B339D00D70230 /* CardClassViewController.swift in Sources */,
+				EF0169BA246B339D00D70230 /* ClassSelectViewController.swift in Sources */,
 				EFFAD8472463437C00BCA4A5 /* hsDecks.xcdatamodeld in Sources */,
 				EF72714E24607106001820D0 /* UILabel.swift in Sources */,
 				EF74578E245F315C00A9C9F8 /* CardsEncoder.swift in Sources */,
