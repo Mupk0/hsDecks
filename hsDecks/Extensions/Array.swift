@@ -35,6 +35,16 @@ extension Array where Element: Card {
             return $0.name < $1.name
         }
     }
+    
+    func getDeckCost() -> Int {
+        var deckCost = 0
+        for card in self {
+            if let cardRarity = card.rarity {
+                deckCost += Rarity(rawValue: cardRarity)?.dastCost ?? 0
+            }
+        }
+        return deckCost
+    }
 }
 
 extension Array where Element: Equatable {

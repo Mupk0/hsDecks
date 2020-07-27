@@ -23,8 +23,10 @@ class DeckDetailViewModel: DeckDetailViewModelType {
     
     init(deckCode: String) {
         if let serializeDeck = DeckSerializer.deserialize(input: deckCode) {
-            self.deck = Observable.just(serializeDeck.cards)
-            self.navigationTitle = Observable.just(serializeDeck.playerClass.description)
+            let cards = serializeDeck.cards
+            let deckCost = cards.getDeckCost()
+            self.deck = Observable.just(cards)
+            self.navigationTitle = Observable.just(String(deckCost))
         } else {
             self.deck = Observable.just([])
             self.navigationTitle = Observable.just("")

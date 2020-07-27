@@ -50,11 +50,13 @@ extension DeckCategoryViewController: UITableViewDelegate {
 }
 
 extension DeckCategoryViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int {
         return DeckTypeSections.allValues.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.textLabel?.text = DeckTypeSections.init(id: indexPath.row).name
         cell.selectionStyle = .none

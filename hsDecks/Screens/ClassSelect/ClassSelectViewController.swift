@@ -44,7 +44,8 @@ extension ClassSelectViewController: ViewConfiguration {
 
 extension ClassSelectViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath) {
         let cardClass = CardClass.init(id: indexPath.row).description
         let vc = DecksByClassViewController(viewModel: DecksByClassViewModel(deckClass: cardClass))
         navigationController?.pushViewController(vc, animated: true)
@@ -52,11 +53,13 @@ extension ClassSelectViewController: UITableViewDelegate {
 }
 
 extension ClassSelectViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int {
         return CardClass.allValues.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.textLabel?.text = CardClass.init(id: indexPath.row).description
         cell.selectionStyle = .none

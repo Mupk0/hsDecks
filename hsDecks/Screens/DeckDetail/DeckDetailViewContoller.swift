@@ -52,22 +52,9 @@ extension DeckDetailViewContoller: ViewConfiguration {
     }
     
     func bindViewModel() {
-//        viewModel.navigationTitle
-//            .observeOn(MainScheduler.instance)
-//            .bind(to: navigationItem.rx.title)
-//            .disposed(by: disposeBag)
-        
-        viewModel.deck
+        viewModel.navigationTitle
             .observeOn(MainScheduler.instance)
-            .bind(onNext: { [weak self] deck in
-                var deckCost = 0
-                for card in deck {
-                    if let cardRarity = card.rarity {
-                        deckCost += Rarity(rawValue: cardRarity)?.dastCost ?? 0
-                    }
-                }
-                self?.navigationItem.title = String(deckCost)
-            })
+            .bind(to: navigationItem.rx.title)
             .disposed(by: disposeBag)
         
         viewModel.deck
