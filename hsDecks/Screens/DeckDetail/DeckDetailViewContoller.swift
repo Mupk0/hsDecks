@@ -12,6 +12,7 @@ import RxCocoa
 class DeckDetailViewContoller: UIViewController {
     
     private let tableView = UITableView(frame: .zero, style: .plain)
+    private let rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: nil)
     
     private let viewModel: DeckDetailViewModel
     private let disposeBag = DisposeBag()
@@ -39,8 +40,10 @@ extension DeckDetailViewContoller: ViewConfiguration {
     
     func configureViews() {
         tableView.rowHeight = 50
-        tableView.separatorStyle = .singleLine
+        tableView.separatorStyle = .none
         tableView.separatorInset = .zero
+        
+        navigationItem.rightBarButtonItem = rightBarButtonItem
     }
     
     func setupConstraints() {
