@@ -11,5 +11,5 @@ import Foundation
 struct NewDeck {
     let deckName: String
     let deckCode: String
-    let deckClass: String
+    let deckClass: CardClass
 }

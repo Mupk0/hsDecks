@@ -33,7 +33,7 @@ class DeckListViewModel {
             .disposed(by: disposeBag)
     }
     // MARK: - add new Deck from Core Data
-    public func addDeck(deckCode: String, deckName: String, deckClass: String) {
+    public func addDeck(deckCode: String, deckName: String, deckClass:  CardClass) {
         deckDataAccessProvider.addDeck(deckCode: deckCode, deckName: deckName, deckClass: deckClass)
     }
     // MARK: - remove specified Deck from Core Data

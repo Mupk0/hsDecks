@@ -55,13 +55,13 @@ class DeckDataAccessProvider {
         }
     }
     // MARK: - add new Deck from Core Data
-    public func addDeck(deckCode: String, deckName: String, deckClass: String) {
+    public func addDeck(deckCode: String, deckName: String, deckClass: CardClass) {
         let newDeck = NSEntityDescription.insertNewObject(forEntityName: "Deck", into: managedObjectContext) as! Deck
         
         newDeck.name = deckName
         newDeck.deckCode = deckCode
         newDeck.date = Date()
-        newDeck.deckClass = deckClass
+        newDeck.deckClass = deckClass.description
         
         do {
             try managedObjectContext.save()

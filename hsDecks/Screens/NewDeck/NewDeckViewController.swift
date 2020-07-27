@@ -91,7 +91,7 @@ extension NewDeckViewController: ViewConfiguration {
                     if let serializeDeck = DeckSerializer.deserialize(input: deckCode) {
                         self?.newDeck.onNext(NewDeck(deckName: deckName,
                                                      deckCode: deckCode,
-                                                     deckClass: serializeDeck.playerClass.description))
+                                                     deckClass: serializeDeck.playerClass))
                         self?.newDeck.onCompleted()
                     } else {
                         print("incorrect Deck Code")

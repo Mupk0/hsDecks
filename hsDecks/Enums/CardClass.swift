@@ -19,7 +19,7 @@ enum CardClass: String, CaseIterable {
     shaman = "HERO_02",
     warlock = "HERO_07",
     warrior = "HERO_01",
-    demonhunter = "HERO_10"
+    demonHunter = "HERO_10"
     
     init (id: Int) {
         switch id {
@@ -42,7 +42,7 @@ enum CardClass: String, CaseIterable {
         case 8:
             self = .warrior
         case 9:
-            self = .demonhunter
+            self = .demonHunter
         default:
             self = .neutral
         }
@@ -70,8 +70,8 @@ enum CardClass: String, CaseIterable {
             return "Warlock"
         case .warrior:
             return "Warrior"
-        case .demonhunter:
-            return "Demonhunter"
+        case .demonHunter:
+            return "Demon Hunter"
         }
     }
 }
