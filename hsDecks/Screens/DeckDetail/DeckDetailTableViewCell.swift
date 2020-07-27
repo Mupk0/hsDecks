@@ -20,6 +20,7 @@ class DeckDetailTableViewCell: UITableViewCell {
     private let cardCostLabel = UILabel.makeForCardLabel()
     private let cardCounterLabel = UILabel.makeForCardLabel()
     private let cardImageView = UIImageView()
+    private let cardRarityColorView = UIView()
     
     private var viewModel: DeckDetailTableViewCellViewModel
     private var disposeBag = DisposeBag()
@@ -52,6 +53,7 @@ extension DeckDetailTableViewCell: ViewConfiguration {
         addSubview(cardNameLabel)
         addSubview(cardCostLabel)
         addSubview(cardCounterLabel)
+        addSubview(cardRarityColorView)
     }
     
     func configureViews() {
@@ -87,7 +89,7 @@ extension DeckDetailTableViewCell: ViewConfiguration {
         cardCounterView.translatesAutoresizingMaskIntoConstraints = false
         cardCounterView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         cardCounterView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        cardCounterView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        cardCounterView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8).isActive = true
         cardCounterView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         
         cardNameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -107,6 +109,12 @@ extension DeckDetailTableViewCell: ViewConfiguration {
         cardCounterLabel.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         cardCounterLabel.leadingAnchor.constraint(equalTo: cardCounterView.leadingAnchor).isActive = true
         cardCounterLabel.trailingAnchor.constraint(equalTo: cardCounterView.trailingAnchor).isActive = true
+        
+        cardRarityColorView.translatesAutoresizingMaskIntoConstraints = false
+        cardRarityColorView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        cardRarityColorView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        cardRarityColorView.widthAnchor.constraint(equalToConstant: 8).isActive = true
+        cardRarityColorView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
     }
     
     func bindViewModel() {
@@ -128,6 +136,9 @@ extension DeckDetailTableViewCell: ViewConfiguration {
             .disposed(by: disposeBag)
         output.count
             .drive(cardCounterLabel.rx.text)
+            .disposed(by: disposeBag)
+        output.rarityColor
+            .drive(cardRarityColorView.rx.backgroundColor)
             .disposed(by: disposeBag)
     }
 }

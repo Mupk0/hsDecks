@@ -85,7 +85,6 @@ extension DeckListViewController: ViewConfiguration {
                     }).disposed(by: strongSelf.disposeBag)
                 self?.present(newDeckViewController, animated: true)
          }.disposed(by: disposeBag)
-
         // MARK: - subscribe to tableView when item has been deleted, then remove todo to persistent storage via viewmodel
         tableView.rx.itemDeleted
             .subscribe(onNext : { [weak self] indexPath in

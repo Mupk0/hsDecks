@@ -20,6 +20,7 @@ class DeckDetailTableViewCellViewModel {
         let cost: Driver<String>
         let count: Driver<String>
         let tileImage: Driver<UIImage>
+        let rarityColor: Driver<UIColor>
     }
     
     let card: Card
@@ -56,6 +57,12 @@ class DeckDetailTableViewCellViewModel {
                 return Driver.just(image)
             }
         
-        return Output(name: name, cost: cost, count: count, tileImage: tileImage)
+        let rarityColor: Driver<UIColor> = input.trigger
+            .flatMapLatest { [weak self] (_) in
+                guard let self = self, let rarity = self.card.rarity, let rarityColor = Rarity(rawValue: rarity)?.color else {return Driver.empty()}
+                return Driver.just(rarityColor)
+            }
+        
+        return Output(name: name, cost: cost, count: count, tileImage: tileImage, rarityColor: rarityColor)
     }
 }
