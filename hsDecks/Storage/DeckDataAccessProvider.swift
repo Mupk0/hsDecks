@@ -13,6 +13,7 @@ import RxRelay
 class DeckDataAccessProvider {
     
     private var decksFromCoreData = BehaviorRelay<[Deck]>(value: [])
+    private var classDecksCounter = BehaviorRelay<Int>(value: 0)
     private var managedObjectContext: NSManagedObjectContext
     
     private let disposeBag = DisposeBag()
@@ -39,6 +40,19 @@ class DeckDataAccessProvider {
     public func fetchObservableData() -> Observable<[Deck]> {
         decksFromCoreData.accept(fetchData())
         return decksFromCoreData.asObservable()
+    }
+    // MARK: - return Class Deck Counter
+    public func fetchDeckClassCounter(cardClass: CardClass) -> Int {
+        let decksFetchRequest = Deck.decksFetchRequest()
+        let classString = cardClass.description
+        decksFetchRequest.predicate = NSPredicate(format: "deckClass == %@",
+                                                  classString)
+        
+        do {
+            return try managedObjectContext.count(for: decksFetchRequest)
+        } catch {
+            return 0
+        }
     }
     // MARK: - add new Deck from Core Data
     public func addDeck(deckCode: String, deckName: String, deckClass: String) {

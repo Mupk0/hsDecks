@@ -22,29 +22,29 @@ class DeckDetailTableViewCellViewModel {
         let tileImage: Driver<UIImage>
     }
     
-    let viewModel: Card
+    let card: Card
     
-    init(_ viewModel: Card) {
-        self.viewModel = viewModel
+    init(_ card: Card) {
+        self.card = card
     }
 
     func transform(input: Input) -> Output {
         let name: Driver<String> = input.trigger
             .flatMapLatest { [weak self] (_) in
                 guard let self = self else {return Driver.empty()}
-                return Driver.just(self.viewModel.name)
+                return Driver.just(self.card.name)
             }
         
         let cost: Driver<String> = input.trigger
             .flatMapLatest { [weak self] (_) in
-                guard let self = self, let cost = self.viewModel.cost else {return Driver.empty()}
+                guard let self = self, let cost = self.card.cost else {return Driver.empty()}
                 let costToString = String(cost)
                 return Driver.just(costToString)
             }
         
         let count: Driver<String> = input.trigger
             .flatMapLatest { [weak self] (_) in
-                guard let self = self, let count = self.viewModel.count else {return Driver.empty()}
+                guard let self = self, let count = self.card.count else {return Driver.empty()}
                 let countToString = String(count)
                 return Driver.just(countToString)
             }
@@ -52,7 +52,7 @@ class DeckDetailTableViewCellViewModel {
         let tileImage: Driver<UIImage> = input.trigger
             .flatMapLatest { [weak self] (_) in
                 guard let self = self else {return Driver.empty()}
-                guard let id = self.viewModel.id, let image = UIImage(named: "\(id)") else {return Driver.empty()}
+                guard let id = self.card.id, let image = UIImage(named: "\(id)") else {return Driver.empty()}
                 return Driver.just(image)
             }
         

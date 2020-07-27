@@ -60,9 +60,12 @@ extension ClassSelectViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = CardClass.init(id: indexPath.row).description
-        cell.selectionStyle = .none
+        let cardClass = CardClass.init(id: indexPath.row)
+        let identifier = ClassSelectTableViewCell.reuseIdentifier
+        let viewModel = ClassSelectTableViewCellViewModel(cardClass)
+        let cell = ClassSelectTableViewCell(style: .default,
+                                            reuseIdentifier: identifier,
+                                            viewModel: viewModel)
         
         return cell
     }

@@ -34,6 +34,8 @@
 		EF74578B245F309300A9C9F8 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF74578A245F309300A9C9F8 /* Cards.swift */; };
 		EF74578E245F315C00A9C9F8 /* CardsEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF74578D245F315C00A9C9F8 /* CardsEncoder.swift */; };
 		EF745790245F31F400A9C9F8 /* cards.json in Resources */ = {isa = PBXBuildFile; fileRef = EF74578F245F31F400A9C9F8 /* cards.json */; };
+		EF8860FB24CEC90D00637541 /* ClassSelectTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8860FA24CEC90D00637541 /* ClassSelectTableViewCellViewModel.swift */; };
+		EF8860FD24CED12900637541 /* ClassSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8860FC24CED12900637541 /* ClassSelectTableViewCell.swift */; };
 		EF8C5CA124688010000778C7 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8C5CA024688010000778C7 /* ViewConfiguration.swift */; };
 		EF8C5CA324689B3D000778C7 /* NewDeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8C5CA224689B3D000778C7 /* NewDeckViewController.swift */; };
 		EF8C5CA52469433C000778C7 /* NewDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8C5CA42469433C000778C7 /* NewDeck.swift */; };
@@ -105,6 +107,8 @@
 		EF74578A245F309300A9C9F8 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
 		EF74578D245F315C00A9C9F8 /* CardsEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsEncoder.swift; sourceTree = "<group>"; };
 		EF74578F245F31F400A9C9F8 /* cards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cards.json; sourceTree = "<group>"; };
+		EF8860FA24CEC90D00637541 /* ClassSelectTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassSelectTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		EF8860FC24CED12900637541 /* ClassSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassSelectTableViewCell.swift; sourceTree = "<group>"; };
 		EF8C5CA024688010000778C7 /* ViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
 		EF8C5CA224689B3D000778C7 /* NewDeckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeckViewController.swift; sourceTree = "<group>"; };
 		EF8C5CA42469433C000778C7 /* NewDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeck.swift; sourceTree = "<group>"; };
@@ -220,6 +224,8 @@
 			isa = PBXGroup;
 			children = (
 				EF0169B9246B339D00D70230 /* ClassSelectViewController.swift */,
+				EF8860FC24CED12900637541 /* ClassSelectTableViewCell.swift */,
+				EF8860FA24CEC90D00637541 /* ClassSelectTableViewCellViewModel.swift */,
 			);
 			path = ClassSelect;
 			sourceTree = "<group>";
@@ -562,6 +568,7 @@
 				EFFAD45E2460928C00BCA4A5 /* DeckDetailViewModel.swift in Sources */,
 				EF74578B245F309300A9C9F8 /* Cards.swift in Sources */,
 				EFFAD4632461E64100BCA4A5 /* DeckListViewModel.swift in Sources */,
+				EF8860FB24CEC90D00637541 /* ClassSelectTableViewCellViewModel.swift in Sources */,
 				EF8C5CA124688010000778C7 /* ViewConfiguration.swift in Sources */,
 				EFFAD46F2462BC1400BCA4A5 /* DeckListTableViewCellViewModel.swift in Sources */,
 				EF745773245F2EAE00A9C9F8 /* String.swift in Sources */,
@@ -572,6 +579,7 @@
 				EFFAD4652462028200BCA4A5 /* DeckCategoryViewController.swift in Sources */,
 				EFFAD851246344FB00BCA4A5 /* Deck+CoreDataClass.swift in Sources */,
 				EF8C5CA724699CC2000778C7 /* DeckTypeSections.swift in Sources */,
+				EF8860FD24CED12900637541 /* ClassSelectTableViewCell.swift in Sources */,
 				EF745781245F2FBB00A9C9F8 /* Rarity.swift in Sources */,
 				EF72714C24603F8B001820D0 /* DeckDetailTableViewCell.swift in Sources */,
 				EF745783245F2FDC00A9C9F8 /* Race.swift in Sources */,
