@@ -50,16 +50,21 @@ extension Array where Element: Card {
     func sortCardForSections() -> [SectionModel<String, Card>] {
         var classCards = [Card]()
         var neutralCards = [Card]()
+        var classCardsCount = 0
+        var neutralCardsCount = 0
         for card in self {
             if (card.cardClass == "NEUTRAL") {
                 neutralCards.append(card)
+                neutralCardsCount += card.count ?? 1
+            } else {
+                classCards.append(card)
+                classCardsCount += card.count ?? 1
             }
-            classCards.append(card)
         }
         return [
-            SectionModel(model: "Class Cards (\(classCards.count))",
+            SectionModel(model: "Class Cards (\(classCardsCount))",
                 items: classCards),
-            SectionModel(model: "Neutral Cards (\(neutralCards.count))",
+            SectionModel(model: "Neutral Cards (\(neutralCardsCount))",
                 items: neutralCards)
         ]
     }
