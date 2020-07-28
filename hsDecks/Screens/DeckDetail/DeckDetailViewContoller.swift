@@ -8,11 +8,24 @@
 
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 class DeckDetailViewContoller: UIViewController {
     
     private let tableView = UITableView(frame: .zero, style: .plain)
     private let rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: nil)
+    
+    private let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, Card>>(
+        configureCell: { (_, _, indexPath, card) in
+            let cell = DeckDetailTableViewCell(style: .default,
+            reuseIdentifier: DeckDetailTableViewCell.reuseIdentifier,
+            viewModel: DeckDetailTableViewCellViewModel(card))
+            return cell
+        },
+        titleForHeaderInSection: { dataSource, sectionIndex in
+            return dataSource[sectionIndex].model
+        }
+    )
     
     private let viewModel: DeckDetailViewModel
     private let disposeBag = DisposeBag()
@@ -61,12 +74,20 @@ extension DeckDetailViewContoller: ViewConfiguration {
             .disposed(by: disposeBag)
         
         viewModel.deck
-            .observeOn(MainScheduler.instance)
-            .bind(to: tableView.rx.items) { (tableView, row, card) in
-                let cell = DeckDetailTableViewCell(style: .default,
-                                                   reuseIdentifier: DeckDetailTableViewCell.reuseIdentifier,
-                                                   viewModel: DeckDetailTableViewCellViewModel(card))
-                return cell
-            }.disposed(by: disposeBag)
+            .bind(to: tableView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
+
+        tableView.rx
+            .setDelegate(self)
+            .disposed(by: disposeBag)
+    }
+}
+
+extension DeckDetailViewContoller: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView,
+                   willDisplay cell: UITableViewCell,
+                   forRowAt indexPath: IndexPath) {
+        cell.addSeparator()
     }
 }

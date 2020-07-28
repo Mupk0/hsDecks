@@ -21,7 +21,6 @@ class DeckDetailTableViewCell: UITableViewCell {
     private let cardCounterLabel = UILabel.makeForCardLabel()
     private let cardImageView = UIImageView()
     private let cardRarityColorView = UIView()
-    private let separator = UIView()
     
     private var viewModel: DeckDetailTableViewCellViewModel
     private var disposeBag = DisposeBag()
@@ -55,7 +54,6 @@ extension DeckDetailTableViewCell: ViewConfiguration {
         addSubview(cardCostLabel)
         addSubview(cardCounterLabel)
         addSubview(cardRarityColorView)
-        addSubview(separator)
     }
     
     func configureViews() {
@@ -67,8 +65,6 @@ extension DeckDetailTableViewCell: ViewConfiguration {
         cardCostLabel.textAlignment = .center
         cardCounterLabel.textAlignment = .center
         cardImageView.contentMode = .scaleAspectFit
-        
-        separator.backgroundColor = .white
     }
     
     func setupConstraints() {
@@ -119,12 +115,6 @@ extension DeckDetailTableViewCell: ViewConfiguration {
         cardRarityColorView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         cardRarityColorView.widthAnchor.constraint(equalToConstant: 8).isActive = true
         cardRarityColorView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        
-        separator.translatesAutoresizingMaskIntoConstraints = false
-        separator.topAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        separator.heightAnchor.constraint(equalToConstant: 3).isActive = true
-        separator.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        separator.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
     }
     
     func bindViewModel() {

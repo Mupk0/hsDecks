@@ -8,24 +8,28 @@
 
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 protocol DeckDetailViewModelType {
     var navigationTitle: Observable<String> { get }
-    var deck: Observable<[Card]> { get }
+    var deck: Observable<[SectionModel<String, Card>]> { get }
 }
 
 class DeckDetailViewModel: DeckDetailViewModelType {
 
     var navigationTitle: Observable<String>
-    var deck: Observable<[Card]>
+    var deck: Observable<[SectionModel<String, Card>]>
     
     private let disposeBag = DisposeBag()
     
     init(deckCode: String) {
         if let serializeDeck = DeckSerializer.deserialize(input: deckCode) {
             let cards = serializeDeck.cards
+            
+            let sortedCards = cards.sortCardForSections()
             let deckCost = cards.getDeckCost()
-            self.deck = Observable.just(cards)
+            
+            self.deck = Observable.just(sortedCards)
             self.navigationTitle = Observable.just(String(deckCost))
         } else {
             self.deck = Observable.just([])

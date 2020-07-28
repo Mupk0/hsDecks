@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxDataSources
 
 extension Array {
     func group<K: Hashable>(_ fn: (Element) -> K) -> [K: [Element]] {
@@ -44,6 +45,20 @@ extension Array where Element: Card {
             }
         }
         return deckCost
+    }
+    
+    func sortCardForSections() -> [SectionModel<String, Card>] {
+        var classCards = SectionModel(model: "Class Cards",
+                                      items: [Card]())
+        var neutralCards = SectionModel(model: "Neutral Cards",
+                                        items: [Card]())
+        for card in self {
+            if (card.cardClass == "NEUTRAL") {
+                neutralCards.items.append(card)
+            }
+            classCards.items.append(card)
+        }
+        return [classCards, neutralCards]
     }
 }
 
