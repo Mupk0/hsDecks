@@ -23,7 +23,7 @@ class DeckDetailViewContoller: UIViewController {
             return cell
         },
         titleForHeaderInSection: { dataSource, sectionIndex in
-            return dataSource[sectionIndex].model
+            return "    \(dataSource[sectionIndex].model)"
         }
     )
     
@@ -89,5 +89,19 @@ extension DeckDetailViewContoller: UITableViewDelegate {
                    willDisplay cell: UITableViewCell,
                    forRowAt indexPath: IndexPath) {
         cell.addSeparator()
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   willDisplayHeaderView view: UIView,
+                   forSection section: Int) {
+        view.tintColor = .purple
+        if let header: UITableViewHeaderFooterView = view as? UITableViewHeaderFooterView {
+            header.textLabel?.textColor = .white
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
     }
 }
