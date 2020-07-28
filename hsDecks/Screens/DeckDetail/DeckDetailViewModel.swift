@@ -13,12 +13,14 @@ import RxDataSources
 protocol DeckDetailViewModelType {
     var navigationTitle: Observable<String> { get }
     var deck: Observable<[SectionModel<String, Card>]> { get }
+    var deckClass: Observable<CardClass> { get }
 }
 
 class DeckDetailViewModel: DeckDetailViewModelType {
 
     var navigationTitle: Observable<String>
     var deck: Observable<[SectionModel<String, Card>]>
+    var deckClass: Observable<CardClass>
     
     private let disposeBag = DisposeBag()
     
@@ -30,9 +32,11 @@ class DeckDetailViewModel: DeckDetailViewModelType {
             let deckCost = cards.getDeckCost()
             
             self.deck = Observable.just(sortedCards)
+            self.deckClass = Observable.just(serializeDeck.playerClass)
             self.navigationTitle = Observable.just(String(deckCost))
         } else {
             self.deck = Observable.just([])
+            self.deckClass = Observable.just(CardClass.neutral)
             self.navigationTitle = Observable.just("")
         }
     }

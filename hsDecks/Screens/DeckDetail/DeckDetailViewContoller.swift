@@ -83,6 +83,17 @@ extension DeckDetailViewContoller: ViewConfiguration {
         tableView.rx
             .setDelegate(self)
             .disposed(by: disposeBag)
+        
+        viewModel.deckClass
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] in
+                let headerView = UIView(frame: CGRect(x: 0,
+                                                      y: 0,
+                                                      width: UIScreen.main.bounds.width,
+                                                      height: 110))
+                headerView.setDetailHeader(deckClass: $0)
+                self?.tableView.tableHeaderView = headerView
+            }).disposed(by: disposeBag)
     }
 }
 
@@ -92,7 +103,9 @@ extension DeckDetailViewContoller: UITableViewDelegate {
                    willDisplayHeaderView view: UIView,
                    forSection section: Int) {
         guard let header = view as? UITableViewHeaderFooterView else { return }
-        header.setDeckDetailSectionHeader()
+        header.textLabel?.textAlignment = .center
+        header.textLabel?.font = .boldSystemFont(ofSize: 20)
+        header.textLabel?.textColor = .black
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
