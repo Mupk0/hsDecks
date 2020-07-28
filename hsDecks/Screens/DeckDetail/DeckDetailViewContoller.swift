@@ -12,7 +12,7 @@ import RxDataSources
 
 class DeckDetailViewContoller: UIViewController {
     
-    private let tableView = UITableView(frame: .zero, style: .plain)
+    private let tableView = UITableView(frame: .zero, style: .grouped)
     private let rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: nil)
     
     private let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, Card>>(
@@ -23,7 +23,7 @@ class DeckDetailViewContoller: UIViewController {
             return cell
         },
         titleForHeaderInSection: { dataSource, sectionIndex in
-            return "    \(dataSource[sectionIndex].model)"
+            return dataSource[sectionIndex].model
         }
     )
     
@@ -52,9 +52,12 @@ extension DeckDetailViewContoller: ViewConfiguration {
     }
     
     func configureViews() {
-        tableView.rowHeight = 50
+        tableView.rowHeight = 44
         tableView.separatorStyle = .none
         tableView.separatorInset = .zero
+        
+        let backgroundViewImage = UIImage(named: "parchment") ?? UIImage()
+        tableView.backgroundColor = UIColor(patternImage: backgroundViewImage)
         
         navigationItem.rightBarButtonItem = rightBarButtonItem
     }
@@ -86,19 +89,10 @@ extension DeckDetailViewContoller: ViewConfiguration {
 extension DeckDetailViewContoller: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView,
-                   willDisplay cell: UITableViewCell,
-                   forRowAt indexPath: IndexPath) {
-        cell.addSeparator()
-    }
-    
-    func tableView(_ tableView: UITableView,
                    willDisplayHeaderView view: UIView,
                    forSection section: Int) {
-        view.tintColor = .purple
-        if let header: UITableViewHeaderFooterView = view as? UITableViewHeaderFooterView {
-            header.textLabel?.textColor = .white
-        }
-        
+        guard let header = view as? UITableViewHeaderFooterView else { return }
+        header.setDeckDetailSectionHeader()
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
