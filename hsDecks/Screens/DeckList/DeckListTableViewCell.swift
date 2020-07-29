@@ -42,6 +42,7 @@ extension DeckListTableViewCell: ViewConfiguration {
     
     func configureViews() {
         selectionStyle = .none
+        backgroundColor = .clear
     }
     
     func setupConstraints() {

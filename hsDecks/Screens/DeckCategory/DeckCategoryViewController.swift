@@ -29,6 +29,9 @@ extension DeckCategoryViewController: ViewConfiguration {
     
     func configureViews() {
         tableView.separatorInset = .zero
+        
+        let parchmentImage = UIImage(named: "parchment") ?? UIImage()
+        tableView.backgroundColor = UIColor(patternImage: parchmentImage)
     }
     
     func setupConstraints() {
@@ -60,7 +63,7 @@ extension DeckCategoryViewController: UITableViewDataSource {
         let cell = UITableViewCell()
         cell.textLabel?.text = DeckTypeSections.init(id: indexPath.row).name
         cell.selectionStyle = .none
-        
+        cell.backgroundColor = .clear
         return cell
     }
 }

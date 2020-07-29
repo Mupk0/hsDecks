@@ -18,6 +18,7 @@ protocol DeckDetailViewModelType {
     var navigationTitle: Observable<String> { get }
     var cards: Observable<[Card]> { get }
     var deckHeader: Observable<DeckHeader> { get }
+    var deckCode: Observable<String> { get }
 }
 
 class DeckDetailViewModel: DeckDetailViewModelType {
@@ -25,6 +26,7 @@ class DeckDetailViewModel: DeckDetailViewModelType {
     var navigationTitle: Observable<String>
     var cards: Observable<[Card]>
     var deckHeader: Observable<DeckHeader>
+    var deckCode: Observable<String>
     
     private let disposeBag = DisposeBag()
     
@@ -42,11 +44,13 @@ class DeckDetailViewModel: DeckDetailViewModelType {
             self.cards = Observable.just(cards)
             self.deckHeader = Observable.just(deckHeader)
             self.navigationTitle = Observable.just(String(deckCost))
+            self.deckCode = Observable.just(deckCode)
         } else {
             self.cards = Observable.just([])
             self.deckHeader = Observable.just(DeckHeader(deckClass: CardClass.neutral,
                                                         deckName: ""))
             self.navigationTitle = Observable.just("")
+            self.deckCode = Observable.just("")
         }
     }
 }

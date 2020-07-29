@@ -43,6 +43,9 @@ extension DeckListViewController: ViewConfiguration {
     func configureViews() {
         tableView.separatorInset = .zero
         navigationItem.rightBarButtonItem = rightBarButtonItem
+        
+        let parchmentImage = UIImage(named: "parchment") ?? UIImage()
+        tableView.backgroundColor = UIColor(patternImage: parchmentImage)
     }
     
     func setupConstraints() {
