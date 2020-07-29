@@ -20,3 +20,32 @@ extension UITableViewCell {
         self.layer.addSublayer(separator)
     }
 }
+
+
+extension UITableViewCell {
+    func outline(string:String,
+                 font:String,
+                 size: CGFloat,
+                 outlineSize:Float,
+                 textColor: UIColor,
+                 outlineColor:UIColor) -> NSMutableAttributedString {
+        return NSMutableAttributedString(string:string,
+                                         attributes: outlineAttributes(font: UIFont(name: font,
+                                                                                    size: size)!,
+                                                                       outlineSize: outlineSize,
+                                                                       textColor: textColor,
+                                                                       outlineColor: outlineColor))
+    }
+
+    private func outlineAttributes(font: UIFont,
+                                   outlineSize: Float,
+                                   textColor: UIColor,
+                                   outlineColor: UIColor) -> [NSAttributedString.Key: Any] {
+        return [
+            NSAttributedString.Key.strokeColor : outlineColor,
+            NSAttributedString.Key.foregroundColor : textColor,
+            NSAttributedString.Key.strokeWidth : -outlineSize,
+            NSAttributedString.Key.font : font
+        ]
+    }
+}

@@ -15,7 +15,7 @@ class ClassSelectTableViewCell: UITableViewCell {
     
     private let classDeckCounterView = UIView()
     private let classNameLabel = UILabel.makeForCardLabel()
-    private let classDeckCounterLabel = UILabel.makeForCardLabel()
+    private let classDeckCounterLabel = UILabel.makeForCardLabel(color: .white)
     //private let classImageView = UIImageView()
     
     private var viewModel: ClassSelectTableViewCellViewModel
@@ -52,7 +52,6 @@ extension ClassSelectTableViewCell: ViewConfiguration {
 
         classDeckCounterView.backgroundColor = .gray
         classDeckCounterLabel.textAlignment = .center
-        classNameLabel.textColor = .black
         //classImageView.contentMode = .scaleAspectFit
     }
     

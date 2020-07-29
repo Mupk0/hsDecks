@@ -42,7 +42,6 @@ extension DeckListTableViewCell: ViewConfiguration {
     
     func configureViews() {
         selectionStyle = .none
-        deckNameLabel.textColor = .black
     }
     
     func setupConstraints() {

@@ -67,10 +67,8 @@ extension DeckListViewController: ViewConfiguration {
         tableView.rx.modelSelected(Deck.self)
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] in
-                if let deckCode = $0.deckCode {
-                    let vc = DeckDetailViewContoller(viewModel: DeckDetailViewModel(deckCode: deckCode))
-                    self?.navigationController?.pushViewController(vc, animated: true)
-                }
+                let vc = DeckDetailViewContoller(viewModel: DeckDetailViewModel(deck: $0))
+                self?.navigationController?.pushViewController(vc, animated: true)
         }).disposed(by: disposeBag)
         // MARK: - event handling when add button tapped, and add todo to persistent storage via viewmodel
          rightBarButtonItem.rx.tap

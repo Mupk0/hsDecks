@@ -9,10 +9,12 @@
 import UIKit
 
 extension UILabel {
-    static func makeForCardLabel() -> UILabel {
+    static func makeForCardLabel(size: CGFloat = 20,
+                                 color: UIColor = .black) -> UILabel {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.textColor = .white
+        label.font = Font.belwe(size: size).font
+        label.textColor = color
+
         return label
     }
 }

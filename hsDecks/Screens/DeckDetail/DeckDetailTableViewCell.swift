@@ -20,14 +20,19 @@ class DeckDetailTableViewCell: UITableViewCell {
     private let frontView = UIView()
     private let rightView = UIView()
     private let cardNameGradientView = UIView()
-    private let cardNameLabel = UILabel.makeForCardLabel()
-    private let cardCostLabel = UILabel.makeForCardLabel()
-    private let cardCounterLabel = UILabel.makeForCardLabel()
+    private var cardNameLabel = UILabel()
+    private let cardCostLabel = UILabel()
+    private let cardCounterLabel = UILabel()
+    
     private let backImageView = UIImageView(image: UIImage(named: "deckListMiddleNoShadow") ?? UIImage())
     private let gradientColor = UIColor(red: 0.16,
                                         green: 0.18,
                                         blue: 0.24,
                                         alpha: 1.00)
+    private let counterColor = UIColor(red: 0.99,
+                                       green: 0.82,
+                                       blue: 0.23,
+                                       alpha: 1.00)
     
     private var viewModel: DeckDetailTableViewCellViewModel
     private var disposeBag = DisposeBag()
@@ -63,14 +68,14 @@ extension DeckDetailTableViewCell: ViewConfiguration {
         addSubview(cardImageView)
         addSubview(cardNameBackgroundView)
         addSubview(cardNameGradientView)
-        addSubview(cardNameLabel)
         addSubview(frontView)
-        addSubview(cardCostView)
-        addSubview(cardCostLabel)
         addSubview(rightView)
-        addSubview(cardCounterLabel)
         addSubview(cardRarityColorView)
         addSubview(backImageView)
+        addSubview(cardCounterLabel)
+        addSubview(cardNameLabel)
+        addSubview(cardCostView)
+        addSubview(cardCostLabel)
     }
     
     func configureViews() {
@@ -85,8 +90,10 @@ extension DeckDetailTableViewCell: ViewConfiguration {
         frontView.backgroundColor = UIColor(patternImage: cardMiddleImage)
         rightView.backgroundColor = UIColor(patternImage: cardRightImage)
         cardNameBackgroundView.backgroundColor = gradientColor
+        
         cardCostLabel.textAlignment = .center
         cardCounterLabel.textAlignment = .center
+        
         cardImageView.contentMode = .scaleAspectFit
         backImageView.contentMode = .scaleToFill
         cardImageView.sizeToFit()
@@ -122,17 +129,17 @@ extension DeckDetailTableViewCell: ViewConfiguration {
         cardCostView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 27).isActive = true
         cardCostView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         
-        cardNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        cardNameLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        cardNameLabel.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        cardNameLabel.leadingAnchor.constraint(equalTo: cardCostView.trailingAnchor, constant: 5).isActive = true
-        cardNameLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        
         cardCostLabel.translatesAutoresizingMaskIntoConstraints = false
         cardCostLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
         cardCostLabel.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         cardCostLabel.leadingAnchor.constraint(equalTo: cardCostView.leadingAnchor).isActive = true
         cardCostLabel.trailingAnchor.constraint(equalTo: cardCostView.trailingAnchor).isActive = true
+        
+        cardNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        cardNameLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        cardNameLabel.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        cardNameLabel.leadingAnchor.constraint(equalTo: cardCostView.trailingAnchor, constant: 5).isActive = true
+        cardNameLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         
         cardCounterLabel.translatesAutoresizingMaskIntoConstraints = false
         cardCounterLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
@@ -168,13 +175,40 @@ extension DeckDetailTableViewCell: ViewConfiguration {
             .drive(cardImageView.rx.image)
             .disposed(by: disposeBag)
         output.name
-            .drive(cardNameLabel.rx.text)
+            .drive(onNext: { [weak self] name in
+                guard let self = self else { return }
+                let label = self.cardNameLabel
+                label.attributedText = self.outline(string: name,
+                                                    font: "BelweBdBTRusbyme-Bold",
+                                                    size: 20,
+                                                    outlineSize: 3,
+                                                    textColor: .white,
+                                                    outlineColor: .black)
+            })
             .disposed(by: disposeBag)
         output.cost
-            .drive(cardCostLabel.rx.text)
+            .drive(onNext: { [weak self] name in
+                guard let self = self else { return }
+                let label = self.cardCostLabel
+                label.attributedText = self.outline(string: name,
+                                                    font: "BelweBdBTRusbyme-Bold",
+                                                    size: 26,
+                                                    outlineSize: 3,
+                                                    textColor: .white,
+                                                    outlineColor: .black)
+            })
             .disposed(by: disposeBag)
         output.count
-            .drive(cardCounterLabel.rx.text)
+            .drive(onNext: { [weak self] name in
+                guard let self = self else { return }
+                let label = self.cardCounterLabel
+                label.attributedText = self.outline(string: name,
+                                                    font: "BelweBdBTRusbyme-Bold",
+                                                    size: 18,
+                                                    outlineSize: 3,
+                                                    textColor: .white,
+                                                    outlineColor: self.counterColor)
+            })
             .disposed(by: disposeBag)
         output.rarityColor
             .drive(cardRarityColorView.rx.backgroundColor)

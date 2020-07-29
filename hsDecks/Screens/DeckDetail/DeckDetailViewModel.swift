@@ -9,33 +9,43 @@
 import RxSwift
 import RxCocoa
 
+struct DeckHeader {
+    var deckClass: CardClass
+    let deckName: String
+}
+
 protocol DeckDetailViewModelType {
     var navigationTitle: Observable<String> { get }
-    var deck: Observable<[Card]> { get }
-    var deckClass: Observable<CardClass> { get }
+    var cards: Observable<[Card]> { get }
+    var deckHeader: Observable<DeckHeader> { get }
 }
 
 class DeckDetailViewModel: DeckDetailViewModelType {
 
     var navigationTitle: Observable<String>
-    var deck: Observable<[Card]>
-    var deckClass: Observable<CardClass>
+    var cards: Observable<[Card]>
+    var deckHeader: Observable<DeckHeader>
     
     private let disposeBag = DisposeBag()
     
-    init(deckCode: String) {
-        if let serializeDeck = DeckSerializer.deserialize(input: deckCode) {
+    init(deck: Deck) {
+        if let deckCode = deck.deckCode,
+            let serializeDeck = DeckSerializer.deserialize(input: deckCode) {
             let cards = serializeDeck.cards
             
             //let sortedCards = cards.sortCardForSections()
             let deckCost = cards.getDeckCost()
+            let deckClass = serializeDeck.playerClass
+            let deckHeader = DeckHeader(deckClass: deckClass,
+                                        deckName: deck.name ?? "Standart \(deckClass.description) deck")
             
-            self.deck = Observable.just(cards)
-            self.deckClass = Observable.just(serializeDeck.playerClass)
+            self.cards = Observable.just(cards)
+            self.deckHeader = Observable.just(deckHeader)
             self.navigationTitle = Observable.just(String(deckCost))
         } else {
-            self.deck = Observable.just([])
-            self.deckClass = Observable.just(CardClass.neutral)
+            self.cards = Observable.just([])
+            self.deckHeader = Observable.just(DeckHeader(deckClass: CardClass.neutral,
+                                                        deckName: ""))
             self.navigationTitle = Observable.just("")
         }
     }

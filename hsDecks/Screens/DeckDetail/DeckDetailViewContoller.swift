@@ -66,7 +66,7 @@ extension DeckDetailViewContoller: ViewConfiguration {
             .setDelegate(self)
             .disposed(by: disposeBag)
         
-        viewModel.deck
+        viewModel.cards
              .observeOn(MainScheduler.instance)
              .bind(to: tableView.rx.items) { (tableView, row, card) in
                  let cell = DeckDetailTableViewCell(style: .default,
@@ -75,14 +75,14 @@ extension DeckDetailViewContoller: ViewConfiguration {
                  return cell
              }.disposed(by: disposeBag)
         
-        viewModel.deckClass
+        viewModel.deckHeader
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] in
                 let headerView = UIView(frame: CGRect(x: 0,
                                                       y: 0,
                                                       width: UIScreen.main.bounds.width,
                                                       height: 131))
-                headerView.setDetailHeader(deckClass: $0)
+                headerView.setDetailHeader(deckHeader: $0)
                 self?.tableView.tableHeaderView = headerView
             }).disposed(by: disposeBag)
     }

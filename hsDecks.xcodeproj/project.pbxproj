@@ -11,6 +11,8 @@
 		EF0169B6246B30E200D70230 /* DecksByClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0169B5246B30E200D70230 /* DecksByClassViewController.swift */; };
 		EF0169B8246B312F00D70230 /* DecksByClassViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0169B7246B312F00D70230 /* DecksByClassViewModel.swift */; };
 		EF0169BA246B339D00D70230 /* ClassSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0169B9246B339D00D70230 /* ClassSelectViewController.swift */; };
+		EF45129424D1A75400FF22C0 /* Belwe.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF909C6724D19F7400AC9FD6 /* Belwe.otf */; };
+		EF45129524D1A75500FF22C0 /* Belwe.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF909C6724D19F7400AC9FD6 /* Belwe.otf */; };
 		EF628804245F3BDD00C693A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF628803245F3BDD00C693A4 /* Assets.xcassets */; };
 		EF727147246031D3001820D0 /* DeckDetailViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF727146246031D3001820D0 /* DeckDetailViewContoller.swift */; };
 		EF727149246036B3001820D0 /* SerializedDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF727148246036B3001820D0 /* SerializedDeck.swift */; };
@@ -39,6 +41,8 @@
 		EF8C5CA324689B3D000778C7 /* NewDeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8C5CA224689B3D000778C7 /* NewDeckViewController.swift */; };
 		EF8C5CA52469433C000778C7 /* NewDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8C5CA42469433C000778C7 /* NewDeck.swift */; };
 		EF8C5CA724699CC2000778C7 /* DeckTypeSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8C5CA624699CC2000778C7 /* DeckTypeSections.swift */; };
+		EF909C6824D19F7400AC9FD6 /* Belwe.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF909C6724D19F7400AC9FD6 /* Belwe.otf */; };
+		EF909C6A24D1A0AE00AC9FD6 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF909C6924D1A0AE00AC9FD6 /* Font.swift */; };
 		EF9783F624CF7A8B007A35AA /* cards.json in Resources */ = {isa = PBXBuildFile; fileRef = EF9783F524CF7A8A007A35AA /* cards.json */; };
 		EF9F428B24D01D880073029B /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9F428A24D01D880073029B /* UITableViewCell.swift */; };
 		EF9F428F24D08E140073029B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9F428E24D08E140073029B /* UIView.swift */; };
@@ -115,6 +119,8 @@
 		EF8C5CA224689B3D000778C7 /* NewDeckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeckViewController.swift; sourceTree = "<group>"; };
 		EF8C5CA42469433C000778C7 /* NewDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeck.swift; sourceTree = "<group>"; };
 		EF8C5CA624699CC2000778C7 /* DeckTypeSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTypeSections.swift; sourceTree = "<group>"; };
+		EF909C6724D19F7400AC9FD6 /* Belwe.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Belwe.otf; sourceTree = "<group>"; };
+		EF909C6924D1A0AE00AC9FD6 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		EF9783F524CF7A8A007A35AA /* cards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = cards.json; path = ../../../../Downloads/cards.json; sourceTree = "<group>"; };
 		EF9F428A24D01D880073029B /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		EF9F428E24D08E140073029B /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -181,6 +187,7 @@
 			children = (
 				EF74574B245F2D4100A9C9F8 /* LaunchScreen.storyboard */,
 				EF628803245F3BDD00C693A4 /* Assets.xcassets */,
+				EF909C6624D19F5000AC9FD6 /* Fonts */,
 				EFFAD8452463437C00BCA4A5 /* hsDecks.xcdatamodeld */,
 				EF9783F524CF7A8A007A35AA /* cards.json */,
 			);
@@ -378,6 +385,15 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		EF909C6624D19F5000AC9FD6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EF909C6924D1A0AE00AC9FD6 /* Font.swift */,
+				EF909C6724D19F7400AC9FD6 /* Belwe.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		EFFAD45C24608E5800BCA4A5 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
@@ -506,6 +522,7 @@
 				EF74574D245F2D4100A9C9F8 /* LaunchScreen.storyboard in Resources */,
 				EF9783F624CF7A8B007A35AA /* cards.json in Resources */,
 				EF628804245F3BDD00C693A4 /* Assets.xcassets in Resources */,
+				EF909C6824D19F7400AC9FD6 /* Belwe.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +530,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF45129424D1A75400FF22C0 /* Belwe.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +538,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF45129524D1A75500FF22C0 /* Belwe.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,6 +626,7 @@
 				EFFAD8532463451300BCA4A5 /* Deck+CoreDataProperties.swift in Sources */,
 				EF745789245F307D00A9C9F8 /* DeckSerializer.swift in Sources */,
 				EF727147246031D3001820D0 /* DeckDetailViewContoller.swift in Sources */,
+				EF909C6A24D1A0AE00AC9FD6 /* Font.swift in Sources */,
 				EF8C5CA52469433C000778C7 /* NewDeck.swift in Sources */,
 				EFFAD46D2462A5DA00BCA4A5 /* ObservableType.swift in Sources */,
 				EFFAD467246297B500BCA4A5 /* Dictionary.swift in Sources */,
