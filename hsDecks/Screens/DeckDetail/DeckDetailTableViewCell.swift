@@ -15,7 +15,6 @@ class DeckDetailTableViewCell: UITableViewCell {
     
     private let cardNameBackgroundView = UIView()
     private let cardCostView = UIView()
-    private let cardCounterView = UIView()
     private let cardImageView = UIImageView()
     private let cardRarityColorView = UIView()
     private let frontView = UIView()
@@ -25,6 +24,10 @@ class DeckDetailTableViewCell: UITableViewCell {
     private let cardCostLabel = UILabel.makeForCardLabel()
     private let cardCounterLabel = UILabel.makeForCardLabel()
     private let backImageView = UIImageView(image: UIImage(named: "deckListMiddleNoShadow") ?? UIImage())
+    private let gradientColor = UIColor(red: 0.16,
+                                        green: 0.18,
+                                        blue: 0.24,
+                                        alpha: 1.00)
     
     private var viewModel: DeckDetailTableViewCellViewModel
     private var disposeBag = DisposeBag()
@@ -50,7 +53,7 @@ class DeckDetailTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        cardNameGradientView.addGradientBackground(firstColor: .black,
+        cardNameGradientView.addGradientBackground(firstColor: gradientColor,
                                                    secondColor: .clear)
     }
 }
@@ -65,7 +68,6 @@ extension DeckDetailTableViewCell: ViewConfiguration {
         addSubview(cardCostView)
         addSubview(cardCostLabel)
         addSubview(rightView)
-        addSubview(cardCounterView)
         addSubview(cardCounterLabel)
         addSubview(cardRarityColorView)
         addSubview(backImageView)
@@ -82,7 +84,7 @@ extension DeckDetailTableViewCell: ViewConfiguration {
         cardCostView.backgroundColor = UIColor(patternImage: cardLeftImage)
         frontView.backgroundColor = UIColor(patternImage: cardMiddleImage)
         rightView.backgroundColor = UIColor(patternImage: cardRightImage)
-        cardNameBackgroundView.backgroundColor = .black
+        cardNameBackgroundView.backgroundColor = gradientColor
         cardCostLabel.textAlignment = .center
         cardCounterLabel.textAlignment = .center
         cardImageView.contentMode = .scaleAspectFit
@@ -120,17 +122,11 @@ extension DeckDetailTableViewCell: ViewConfiguration {
         cardCostView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 27).isActive = true
         cardCostView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         
-        cardCounterView.translatesAutoresizingMaskIntoConstraints = false
-        cardCounterView.topAnchor.constraint(equalTo: topAnchor, constant: 7).isActive = true
-        cardCounterView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -7).isActive = true
-        cardCounterView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -36).isActive = true
-        cardCounterView.widthAnchor.constraint(equalToConstant: 20).isActive = true
-        
         cardNameLabel.translatesAutoresizingMaskIntoConstraints = false
         cardNameLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
         cardNameLabel.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         cardNameLabel.leadingAnchor.constraint(equalTo: cardCostView.trailingAnchor, constant: 5).isActive = true
-        cardNameLabel.trailingAnchor.constraint(equalTo: cardCounterView.trailingAnchor).isActive = true
+        cardNameLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         
         cardCostLabel.translatesAutoresizingMaskIntoConstraints = false
         cardCostLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
@@ -141,14 +137,14 @@ extension DeckDetailTableViewCell: ViewConfiguration {
         cardCounterLabel.translatesAutoresizingMaskIntoConstraints = false
         cardCounterLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
         cardCounterLabel.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        cardCounterLabel.leadingAnchor.constraint(equalTo: cardCounterView.leadingAnchor).isActive = true
-        cardCounterLabel.trailingAnchor.constraint(equalTo: cardCounterView.trailingAnchor).isActive = true
+        cardCounterLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -38).isActive = true
+        cardCounterLabel.widthAnchor.constraint(equalToConstant: 20).isActive = true
         
         cardRarityColorView.translatesAutoresizingMaskIntoConstraints = false
         cardRarityColorView.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
         cardRarityColorView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
         cardRarityColorView.widthAnchor.constraint(equalToConstant: 4).isActive = true
-        cardRarityColorView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -33).isActive = true
+        cardRarityColorView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -34).isActive = true
         
         frontView.translatesAutoresizingMaskIntoConstraints = false
         frontView.topAnchor.constraint(equalTo: topAnchor).isActive = true
@@ -169,10 +165,7 @@ extension DeckDetailTableViewCell: ViewConfiguration {
         
         let output = viewModel.transform(input: input)
         output.tileImage
-            .drive(onNext: { [weak self] (image) in
-                guard let self = self else {return}
-                self.cardImageView.image = image
-            })
+            .drive(cardImageView.rx.image)
             .disposed(by: disposeBag)
         output.name
             .drive(cardNameLabel.rx.text)
