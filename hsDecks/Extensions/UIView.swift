@@ -21,26 +21,40 @@ extension UIView {
     }
     
     func setDetailHeader(deckClass: CardClass) {
+        
+        let deckListTopImage = UIImage(named: "deckListTopNoShadowFinal")
+        let deckListTopImageView = UIImageView(image: deckListTopImage)
+        deckListTopImageView.contentMode = .scaleAspectFit
+        
         let heroImage = UIImage(named: "\(deckClass.rawValue)_portrait")
         let heroImageView = UIImageView(image: heroImage)
-        heroImageView.contentMode = .scaleAspectFill
-        addSubview(heroImageView)
-        
-        heroImageView.translatesAutoresizingMaskIntoConstraints = false
-        heroImageView.topAnchor.constraint(equalTo: topAnchor, constant: 23).isActive = true
-        heroImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -18).isActive = true
-        heroImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
-        heroImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25).isActive = true
-        
+
         let image = UIImage(named: "deckbuilder_frame_top_standard_desktop")
         let imageView = UIImageView(image: image)
-        imageView.contentMode = .scaleToFill
+        
+        addSubview(deckListTopImageView)
+        addSubview(heroImageView)
         addSubview(imageView)
         
+        deckListTopImageView.translatesAutoresizingMaskIntoConstraints = false
+        deckListTopImageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        deckListTopImageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        deckListTopImageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        deckListTopImageView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        
+        heroImageView.translatesAutoresizingMaskIntoConstraints = false
+        heroImageView.topAnchor.constraint(equalTo: imageView.topAnchor, constant: 23).isActive = true
+        heroImageView.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: -18).isActive = true
+        heroImageView.leadingAnchor.constraint(equalTo: imageView.leadingAnchor, constant: 20).isActive = true
+        heroImageView.trailingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: -25).isActive = true
+        
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        imageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        imageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        imageView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        imageView.topAnchor.constraint(equalTo: topAnchor, constant: 11).isActive = true
+        imageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -18).isActive = true
+        imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 19).isActive = true
+        imageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -19).isActive = true
+        
+        heroImageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleToFill
     }
 }

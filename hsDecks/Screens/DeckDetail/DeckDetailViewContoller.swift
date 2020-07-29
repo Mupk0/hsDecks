@@ -8,24 +8,11 @@
 
 import RxSwift
 import RxCocoa
-import RxDataSources
 
 class DeckDetailViewContoller: UIViewController {
     
     private let tableView = UITableView(frame: .zero, style: .grouped)
     private let rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: nil)
-    
-    private let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, Card>>(
-        configureCell: { (_, _, indexPath, card) in
-            let cell = DeckDetailTableViewCell(style: .default,
-            reuseIdentifier: DeckDetailTableViewCell.reuseIdentifier,
-            viewModel: DeckDetailTableViewCellViewModel(card))
-            return cell
-        },
-        titleForHeaderInSection: { dataSource, sectionIndex in
-            return dataSource[sectionIndex].model
-        }
-    )
     
     private let viewModel: DeckDetailViewModel
     private let disposeBag = DisposeBag()
@@ -56,8 +43,7 @@ extension DeckDetailViewContoller: ViewConfiguration {
         tableView.separatorStyle = .none
         tableView.separatorInset = .zero
         
-        let backgroundViewImage = UIImage(named: "parchment") ?? UIImage()
-        tableView.backgroundColor = UIColor(patternImage: backgroundViewImage)
+        tableView.backgroundColor = UIColor(red: 0.21, green: 0.16, blue: 0.27, alpha: 1.00)
         
         navigationItem.rightBarButtonItem = rightBarButtonItem
     }
@@ -75,14 +61,19 @@ extension DeckDetailViewContoller: ViewConfiguration {
             .observeOn(MainScheduler.instance)
             .bind(to: navigationItem.rx.title)
             .disposed(by: disposeBag)
-        
-        viewModel.deck
-            .bind(to: tableView.rx.items(dataSource: dataSource))
-            .disposed(by: disposeBag)
 
         tableView.rx
             .setDelegate(self)
             .disposed(by: disposeBag)
+        
+        viewModel.deck
+             .observeOn(MainScheduler.instance)
+             .bind(to: tableView.rx.items) { (tableView, row, card) in
+                 let cell = DeckDetailTableViewCell(style: .default,
+                                                    reuseIdentifier: DeckDetailTableViewCell.reuseIdentifier,
+                                                    viewModel: DeckDetailTableViewCellViewModel(card))
+                 return cell
+             }.disposed(by: disposeBag)
         
         viewModel.deckClass
             .observeOn(MainScheduler.instance)
@@ -90,7 +81,7 @@ extension DeckDetailViewContoller: ViewConfiguration {
                 let headerView = UIView(frame: CGRect(x: 0,
                                                       y: 0,
                                                       width: UIScreen.main.bounds.width,
-                                                      height: 110))
+                                                      height: 131))
                 headerView.setDetailHeader(deckClass: $0)
                 self?.tableView.tableHeaderView = headerView
             }).disposed(by: disposeBag)
@@ -106,6 +97,12 @@ extension DeckDetailViewContoller: UITableViewDelegate {
         header.textLabel?.textAlignment = .center
         header.textLabel?.font = .boldSystemFont(ofSize: 20)
         header.textLabel?.textColor = .black
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   viewForFooterInSection section: Int) -> UIView? {
+        let footerView = DeckDetailSectionFooterView()
+        return footerView
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

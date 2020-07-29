@@ -42,6 +42,7 @@
 		EF9783F624CF7A8B007A35AA /* cards.json in Resources */ = {isa = PBXBuildFile; fileRef = EF9783F524CF7A8A007A35AA /* cards.json */; };
 		EF9F428B24D01D880073029B /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9F428A24D01D880073029B /* UITableViewCell.swift */; };
 		EF9F428F24D08E140073029B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9F428E24D08E140073029B /* UIView.swift */; };
+		EF9F429524D155740073029B /* DeckDetailSectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9F429424D155740073029B /* DeckDetailSectionFooterView.swift */; };
 		EFFAD45E2460928C00BCA4A5 /* DeckDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD45D2460928C00BCA4A5 /* DeckDetailViewModel.swift */; };
 		EFFAD4602460B33D00BCA4A5 /* DeckListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD45F2460B33D00BCA4A5 /* DeckListTableViewCell.swift */; };
 		EFFAD4632461E64100BCA4A5 /* DeckListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD4622461E64100BCA4A5 /* DeckListViewModel.swift */; };
@@ -117,6 +118,7 @@
 		EF9783F524CF7A8A007A35AA /* cards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = cards.json; path = ../../../../Downloads/cards.json; sourceTree = "<group>"; };
 		EF9F428A24D01D880073029B /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		EF9F428E24D08E140073029B /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		EF9F429424D155740073029B /* DeckDetailSectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailSectionFooterView.swift; sourceTree = "<group>"; };
 		EFFAD45D2460928C00BCA4A5 /* DeckDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailViewModel.swift; sourceTree = "<group>"; };
 		EFFAD45F2460B33D00BCA4A5 /* DeckListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckListTableViewCell.swift; sourceTree = "<group>"; };
 		EFFAD4622461E64100BCA4A5 /* DeckListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckListViewModel.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				EF727146246031D3001820D0 /* DeckDetailViewContoller.swift */,
+				EF9F429424D155740073029B /* DeckDetailSectionFooterView.swift */,
 				EFFAD45D2460928C00BCA4A5 /* DeckDetailViewModel.swift */,
 				EF72714B24603F8B001820D0 /* DeckDetailTableViewCell.swift */,
 				EFFAD46A2462A00800BCA4A5 /* DeckDetailTableViewCellViewModel.swift */,
@@ -570,6 +573,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFFAD46B2462A00800BCA4A5 /* DeckDetailTableViewCellViewModel.swift in Sources */,
+				EF9F429524D155740073029B /* DeckDetailSectionFooterView.swift in Sources */,
 				EF74577B245F2F2A00A9C9F8 /* CardClass.swift in Sources */,
 				EFFAD45E2460928C00BCA4A5 /* DeckDetailViewModel.swift in Sources */,
 				EF74578B245F309300A9C9F8 /* Cards.swift in Sources */,
