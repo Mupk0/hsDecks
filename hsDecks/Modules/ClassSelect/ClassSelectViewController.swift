@@ -55,7 +55,7 @@ extension ClassSelectViewController: UITableViewDelegate {
 extension ClassSelectViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int {
-        return CardClass.allCases.count
+        return CardClass.allValues.count
     }
     
     func tableView(_ tableView: UITableView,

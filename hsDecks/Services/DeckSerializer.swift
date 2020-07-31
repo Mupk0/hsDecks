@@ -9,8 +9,14 @@
 import Foundation
 
 class DeckSerializer {
+    
     enum DeckSerializerError: Error {
         case argumentError
+    }
+    
+    struct SerializedDeck {
+        let playerClass: CardClass
+        let cards: [Card]
     }
     
     class func deserialize(input: String) -> SerializedDeck? {

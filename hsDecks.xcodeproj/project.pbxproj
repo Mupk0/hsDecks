@@ -18,7 +18,6 @@
 		EF45129524D1A75500FF22C0 /* Belwe.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF909C6724D19F7400AC9FD6 /* Belwe.otf */; };
 		EF628804245F3BDD00C693A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF628803245F3BDD00C693A4 /* Assets.xcassets */; };
 		EF727147246031D3001820D0 /* DeckDetailViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF727146246031D3001820D0 /* DeckDetailViewContoller.swift */; };
-		EF727149246036B3001820D0 /* SerializedDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF727148246036B3001820D0 /* SerializedDeck.swift */; };
 		EF72714C24603F8B001820D0 /* DeckDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF72714B24603F8B001820D0 /* DeckDetailTableViewCell.swift */; };
 		EF72714E24607106001820D0 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF72714D24607106001820D0 /* UILabel.swift */; };
 		EF745743245F2D4100A9C9F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF745742245F2D4100A9C9F8 /* AppDelegate.swift */; };
@@ -93,7 +92,6 @@
 		EF44153424D4AF8B00BF0862 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		EF628803245F3BDD00C693A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF727146246031D3001820D0 /* DeckDetailViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailViewContoller.swift; sourceTree = "<group>"; };
-		EF727148246036B3001820D0 /* SerializedDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerializedDeck.swift; sourceTree = "<group>"; };
 		EF72714B24603F8B001820D0 /* DeckDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailTableViewCell.swift; sourceTree = "<group>"; };
 		EF72714D24607106001820D0 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		EF74573F245F2D4100A9C9F8 /* hsDecks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hsDecks.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,9 +190,9 @@
 			isa = PBXGroup;
 			children = (
 				EF74574B245F2D4100A9C9F8 /* LaunchScreen.storyboard */,
+				EFFAD8452463437C00BCA4A5 /* hsDecks.xcdatamodeld */,
 				EF628803245F3BDD00C693A4 /* Assets.xcassets */,
 				EF909C6624D19F5000AC9FD6 /* Fonts */,
-				EFFAD8452463437C00BCA4A5 /* hsDecks.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -250,6 +248,32 @@
 			path = ClassSelect;
 			sourceTree = "<group>";
 		};
+		EF44153624D4BC3500BF0862 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				EF745776245F2EDB00A9C9F8 /* Models */,
+				EFFAD850246344FB00BCA4A5 /* Deck+CoreDataClass.swift */,
+				EFFAD8522463451300BCA4A5 /* Deck+CoreDataProperties.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		EF44153724D4BF5400BF0862 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				EF44153424D4AF8B00BF0862 /* ImageView.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		EF44153824D4BFCD00BF0862 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EF44153724D4BF5400BF0862 /* Custom */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		EF72714524603150001820D0 /* NewDeck */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,12 +321,12 @@
 			isa = PBXGroup;
 			children = (
 				EF72714A24603F74001820D0 /* Modules */,
-				EF745776245F2EDB00A9C9F8 /* Models */,
-				EF745779245F2F1E00A9C9F8 /* Enums */,
+				EF44153624D4BC3500BF0862 /* Database */,
 				EF745771245F2EA200A9C9F8 /* Extensions */,
 				EF8C5C9F24688002000778C7 /* Protocols */,
 				EFFAD8562463582000BCA4A5 /* Storage */,
-				EF745787245F304D00A9C9F8 /* Helper */,
+				EF745787245F304D00A9C9F8 /* Services */,
+				EF44153824D4BFCD00BF0862 /* Views */,
 				EF745770245F2E6A00A9C9F8 /* Support */,
 				EF203D152460238B00C3604D /* Resources */,
 			);
@@ -346,6 +370,7 @@
 				EFFAD46C2462A5DA00BCA4A5 /* ObservableType.swift */,
 				EF9F428A24D01D880073029B /* UITableViewCell.swift */,
 				EF9F428E24D08E140073029B /* UIView.swift */,
+				EF745785245F301200A9C9F8 /* Varint.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -353,18 +378,17 @@
 		EF745776245F2EDB00A9C9F8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EF745779245F2F1E00A9C9F8 /* Card */,
 				EF745777245F2EE700A9C9F8 /* Card.swift */,
-				EF727148246036B3001820D0 /* SerializedDeck.swift */,
+				EF74578A245F309300A9C9F8 /* Cards.swift */,
 				EF8C5CA42469433C000778C7 /* NewDeck.swift */,
 				EF9409D324D44EEF002249BC /* DeckHeaderModel.swift */,
-				EFFAD850246344FB00BCA4A5 /* Deck+CoreDataClass.swift */,
-				EFFAD8522463451300BCA4A5 /* Deck+CoreDataProperties.swift */,
 				EF8C5CA624699CC2000778C7 /* DeckTypeSections.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		EF745779245F2F1E00A9C9F8 /* Enums */ = {
+		EF745779245F2F1E00A9C9F8 /* Card */ = {
 			isa = PBXGroup;
 			children = (
 				EF74577A245F2F2A00A9C9F8 /* CardClass.swift */,
@@ -373,17 +397,16 @@
 				EF745780245F2FBB00A9C9F8 /* Rarity.swift */,
 				EF745782245F2FDC00A9C9F8 /* Race.swift */,
 			);
-			path = Enums;
+			path = Card;
 			sourceTree = "<group>";
 		};
-		EF745787245F304D00A9C9F8 /* Helper */ = {
+		EF745787245F304D00A9C9F8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				EFFAD45C24608E5800BCA4A5 /* Cards */,
+				EF745788245F307D00A9C9F8 /* DeckSerializer.swift */,
 				EF32FE8A24D49DD900E393CF /* ActualityCardProvider.swift */,
-				EF44153424D4AF8B00BF0862 /* ImageView.swift */,
 			);
-			path = Helper;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		EF8C5C9F24688002000778C7 /* Protocols */ = {
@@ -401,16 +424,6 @@
 				EF909C6724D19F7400AC9FD6 /* Belwe.otf */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		EFFAD45C24608E5800BCA4A5 /* Cards */ = {
-			isa = PBXGroup;
-			children = (
-				EF745785245F301200A9C9F8 /* Varint.swift */,
-				EF745788245F307D00A9C9F8 /* DeckSerializer.swift */,
-				EF74578A245F309300A9C9F8 /* Cards.swift */,
-			);
-			path = Cards;
 			sourceTree = "<group>";
 		};
 		EFFAD8562463582000BCA4A5 /* Storage */ = {
@@ -630,7 +643,6 @@
 				EFFAD8472463437C00BCA4A5 /* hsDecks.xcdatamodeld in Sources */,
 				EF72714E24607106001820D0 /* UILabel.swift in Sources */,
 				EF9F428B24D01D880073029B /* UITableViewCell.swift in Sources */,
-				EF727149246036B3001820D0 /* SerializedDeck.swift in Sources */,
 				EFFAD4602460B33D00BCA4A5 /* DeckListTableViewCell.swift in Sources */,
 				EF74577F245F2FA500A9C9F8 /* CardType.swift in Sources */,
 				EFFAD8532463451300BCA4A5 /* Deck+CoreDataProperties.swift in Sources */,

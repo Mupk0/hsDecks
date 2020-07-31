@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum CardClass: String, CaseIterable {
+enum CardClass: String {
     case neutral = "",
     druid = "HERO_06",
     hunter = "HERO_05",
@@ -47,6 +47,8 @@ enum CardClass: String, CaseIterable {
             self = .neutral
         }
     }
+    
+    static let allValues = [.druid, .hunter, .mage, paladin, .priest, .rogue, shaman, .warlock, .warrior, .demonHunter]
     
     var description: String {
         switch self {
