@@ -78,11 +78,8 @@ extension DeckDetailViewContoller: ViewConfiguration {
         viewModel.deckHeader
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] in
-                let headerView = UIView(frame: CGRect(x: 0,
-                                                      y: 0,
-                                                      width: UIScreen.main.bounds.width,
-                                                      height: 131))
-                headerView.setDetailHeader(deckHeader: $0)
+                let headerView = DeckDetailSectionHeaderView()
+                headerView.setDetailHeader($0)
                 self?.tableView.tableHeaderView = headerView
             }).disposed(by: disposeBag)
         
@@ -98,10 +95,9 @@ extension DeckDetailViewContoller: ViewConfiguration {
                     
                     copyDeckAlert.addAction(UIAlertAction(title: "OK",
                                                           style: .default,
-                                                          handler: { al in
-                        UIPasteboard.general.string = deckCode
-                    }))
+                                                          handler: nil))
                     self?.present(copyDeckAlert, animated: true, completion: nil)
+                    UIPasteboard.general.string = deckCode
                 }).disposed(by: strongSelf.disposeBag)
         }.disposed(by: disposeBag)
     }

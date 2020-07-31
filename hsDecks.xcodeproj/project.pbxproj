@@ -43,6 +43,8 @@
 		EF8C5CA724699CC2000778C7 /* DeckTypeSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8C5CA624699CC2000778C7 /* DeckTypeSections.swift */; };
 		EF909C6824D19F7400AC9FD6 /* Belwe.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF909C6724D19F7400AC9FD6 /* Belwe.otf */; };
 		EF909C6A24D1A0AE00AC9FD6 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF909C6924D1A0AE00AC9FD6 /* Font.swift */; };
+		EF9409D224D44BDE002249BC /* DeckDetailSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9409D124D44BDE002249BC /* DeckDetailSectionHeaderView.swift */; };
+		EF9409D424D44EEF002249BC /* DeckHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9409D324D44EEF002249BC /* DeckHeaderModel.swift */; };
 		EF9783F624CF7A8B007A35AA /* cards.json in Resources */ = {isa = PBXBuildFile; fileRef = EF9783F524CF7A8A007A35AA /* cards.json */; };
 		EF9F428B24D01D880073029B /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9F428A24D01D880073029B /* UITableViewCell.swift */; };
 		EF9F428F24D08E140073029B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9F428E24D08E140073029B /* UIView.swift */; };
@@ -121,6 +123,8 @@
 		EF8C5CA624699CC2000778C7 /* DeckTypeSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTypeSections.swift; sourceTree = "<group>"; };
 		EF909C6724D19F7400AC9FD6 /* Belwe.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Belwe.otf; sourceTree = "<group>"; };
 		EF909C6924D1A0AE00AC9FD6 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		EF9409D124D44BDE002249BC /* DeckDetailSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailSectionHeaderView.swift; sourceTree = "<group>"; };
+		EF9409D324D44EEF002249BC /* DeckHeaderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckHeaderModel.swift; sourceTree = "<group>"; };
 		EF9783F524CF7A8A007A35AA /* cards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = cards.json; path = ../../../../Downloads/cards.json; sourceTree = "<group>"; };
 		EF9F428A24D01D880073029B /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		EF9F428E24D08E140073029B /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -210,6 +214,7 @@
 			children = (
 				EF727146246031D3001820D0 /* DeckDetailViewContoller.swift */,
 				EF9F429424D155740073029B /* DeckDetailSectionFooterView.swift */,
+				EF9409D124D44BDE002249BC /* DeckDetailSectionHeaderView.swift */,
 				EFFAD45D2460928C00BCA4A5 /* DeckDetailViewModel.swift */,
 				EF72714B24603F8B001820D0 /* DeckDetailTableViewCell.swift */,
 				EFFAD46A2462A00800BCA4A5 /* DeckDetailTableViewCellViewModel.swift */,
@@ -350,6 +355,7 @@
 				EF745777245F2EE700A9C9F8 /* Card.swift */,
 				EF727148246036B3001820D0 /* SerializedDeck.swift */,
 				EF8C5CA42469433C000778C7 /* NewDeck.swift */,
+				EF9409D324D44EEF002249BC /* DeckHeaderModel.swift */,
 				EFFAD850246344FB00BCA4A5 /* Deck+CoreDataClass.swift */,
 				EFFAD8522463451300BCA4A5 /* Deck+CoreDataProperties.swift */,
 				EF8C5CA624699CC2000778C7 /* DeckTypeSections.swift */,
@@ -614,8 +620,10 @@
 				EF72714C24603F8B001820D0 /* DeckDetailTableViewCell.swift in Sources */,
 				EF745783245F2FDC00A9C9F8 /* Race.swift in Sources */,
 				EF74577D245F2F5500A9C9F8 /* CardSet.swift in Sources */,
+				EF9409D424D44EEF002249BC /* DeckHeaderModel.swift in Sources */,
 				EF745778245F2EE700A9C9F8 /* Card.swift in Sources */,
 				EF0169BA246B339D00D70230 /* ClassSelectViewController.swift in Sources */,
+				EF9409D224D44BDE002249BC /* DeckDetailSectionHeaderView.swift in Sources */,
 				EFFAD8472463437C00BCA4A5 /* hsDecks.xcdatamodeld in Sources */,
 				EF72714E24607106001820D0 /* UILabel.swift in Sources */,
 				EF9F428B24D01D880073029B /* UITableViewCell.swift in Sources */,

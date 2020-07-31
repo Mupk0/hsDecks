@@ -9,15 +9,10 @@
 import RxSwift
 import RxCocoa
 
-struct DeckHeader {
-    var deckClass: CardClass
-    let deckName: String
-}
-
 protocol DeckDetailViewModelType {
     var navigationTitle: Observable<String> { get }
     var cards: Observable<[Card]> { get }
-    var deckHeader: Observable<DeckHeader> { get }
+    var deckHeader: Observable<DeckHeaderModel> { get }
     var deckCode: Observable<String> { get }
 }
 
@@ -25,7 +20,7 @@ class DeckDetailViewModel: DeckDetailViewModelType {
 
     var navigationTitle: Observable<String>
     var cards: Observable<[Card]>
-    var deckHeader: Observable<DeckHeader>
+    var deckHeader: Observable<DeckHeaderModel>
     var deckCode: Observable<String>
     
     private let disposeBag = DisposeBag()
@@ -38,7 +33,7 @@ class DeckDetailViewModel: DeckDetailViewModelType {
             //let sortedCards = cards.sortCardForSections()
             let deckCost = cards.getDeckCost()
             let deckClass = serializeDeck.playerClass
-            let deckHeader = DeckHeader(deckClass: deckClass,
+            let deckHeader = DeckHeaderModel(deckClass: deckClass,
                                         deckName: deck.name ?? "Standart \(deckClass.description) deck")
             
             self.cards = Observable.just(cards)
@@ -47,7 +42,7 @@ class DeckDetailViewModel: DeckDetailViewModelType {
             self.deckCode = Observable.just(deckCode)
         } else {
             self.cards = Observable.just([])
-            self.deckHeader = Observable.just(DeckHeader(deckClass: CardClass.neutral,
+            self.deckHeader = Observable.just(DeckHeaderModel(deckClass: CardClass.neutral,
                                                         deckName: ""))
             self.navigationTitle = Observable.just("")
             self.deckCode = Observable.just("")
