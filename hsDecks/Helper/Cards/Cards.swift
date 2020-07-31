@@ -10,7 +10,7 @@ import Foundation
 
 final class Cards {
     
-    static var cards = allCards
+    static var cards = DiskProvider.getCardData()
     
     static func hero(byId cardId: String) -> Card? {
         if let card = cards.first(where: { $0.id == cardId }) {

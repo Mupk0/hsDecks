@@ -11,6 +11,8 @@
 		EF0169B6246B30E200D70230 /* DecksByClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0169B5246B30E200D70230 /* DecksByClassViewController.swift */; };
 		EF0169B8246B312F00D70230 /* DecksByClassViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0169B7246B312F00D70230 /* DecksByClassViewModel.swift */; };
 		EF0169BA246B339D00D70230 /* ClassSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0169B9246B339D00D70230 /* ClassSelectViewController.swift */; };
+		EF32FE8724D4814C00E393CF /* DiskProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF32FE8624D4814C00E393CF /* DiskProvider.swift */; };
+		EF32FE8B24D49DD900E393CF /* ActualityCardProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF32FE8A24D49DD900E393CF /* ActualityCardProvider.swift */; };
 		EF45129424D1A75400FF22C0 /* Belwe.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF909C6724D19F7400AC9FD6 /* Belwe.otf */; };
 		EF45129524D1A75500FF22C0 /* Belwe.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF909C6724D19F7400AC9FD6 /* Belwe.otf */; };
 		EF628804245F3BDD00C693A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF628803245F3BDD00C693A4 /* Assets.xcassets */; };
@@ -34,7 +36,6 @@
 		EF745786245F301200A9C9F8 /* Varint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF745785245F301200A9C9F8 /* Varint.swift */; };
 		EF745789245F307D00A9C9F8 /* DeckSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF745788245F307D00A9C9F8 /* DeckSerializer.swift */; };
 		EF74578B245F309300A9C9F8 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF74578A245F309300A9C9F8 /* Cards.swift */; };
-		EF74578E245F315C00A9C9F8 /* CardsEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF74578D245F315C00A9C9F8 /* CardsEncoder.swift */; };
 		EF8860FB24CEC90D00637541 /* ClassSelectTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8860FA24CEC90D00637541 /* ClassSelectTableViewCellViewModel.swift */; };
 		EF8860FD24CED12900637541 /* ClassSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8860FC24CED12900637541 /* ClassSelectTableViewCell.swift */; };
 		EF8C5CA124688010000778C7 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8C5CA024688010000778C7 /* ViewConfiguration.swift */; };
@@ -45,7 +46,6 @@
 		EF909C6A24D1A0AE00AC9FD6 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF909C6924D1A0AE00AC9FD6 /* Font.swift */; };
 		EF9409D224D44BDE002249BC /* DeckDetailSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9409D124D44BDE002249BC /* DeckDetailSectionHeaderView.swift */; };
 		EF9409D424D44EEF002249BC /* DeckHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9409D324D44EEF002249BC /* DeckHeaderModel.swift */; };
-		EF9783F624CF7A8B007A35AA /* cards.json in Resources */ = {isa = PBXBuildFile; fileRef = EF9783F524CF7A8A007A35AA /* cards.json */; };
 		EF9F428B24D01D880073029B /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9F428A24D01D880073029B /* UITableViewCell.swift */; };
 		EF9F428F24D08E140073029B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9F428E24D08E140073029B /* UIView.swift */; };
 		EF9F429524D155740073029B /* DeckDetailSectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9F429424D155740073029B /* DeckDetailSectionFooterView.swift */; };
@@ -87,6 +87,8 @@
 		EF0169B5246B30E200D70230 /* DecksByClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksByClassViewController.swift; sourceTree = "<group>"; };
 		EF0169B7246B312F00D70230 /* DecksByClassViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksByClassViewModel.swift; sourceTree = "<group>"; };
 		EF0169B9246B339D00D70230 /* ClassSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassSelectViewController.swift; sourceTree = "<group>"; };
+		EF32FE8624D4814C00E393CF /* DiskProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskProvider.swift; sourceTree = "<group>"; };
+		EF32FE8A24D49DD900E393CF /* ActualityCardProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualityCardProvider.swift; sourceTree = "<group>"; };
 		EF628803245F3BDD00C693A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF727146246031D3001820D0 /* DeckDetailViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailViewContoller.swift; sourceTree = "<group>"; };
 		EF727148246036B3001820D0 /* SerializedDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerializedDeck.swift; sourceTree = "<group>"; };
@@ -114,7 +116,6 @@
 		EF745785245F301200A9C9F8 /* Varint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Varint.swift; sourceTree = "<group>"; };
 		EF745788245F307D00A9C9F8 /* DeckSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckSerializer.swift; sourceTree = "<group>"; };
 		EF74578A245F309300A9C9F8 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
-		EF74578D245F315C00A9C9F8 /* CardsEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsEncoder.swift; sourceTree = "<group>"; };
 		EF8860FA24CEC90D00637541 /* ClassSelectTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassSelectTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		EF8860FC24CED12900637541 /* ClassSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassSelectTableViewCell.swift; sourceTree = "<group>"; };
 		EF8C5CA024688010000778C7 /* ViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
@@ -125,7 +126,6 @@
 		EF909C6924D1A0AE00AC9FD6 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		EF9409D124D44BDE002249BC /* DeckDetailSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailSectionHeaderView.swift; sourceTree = "<group>"; };
 		EF9409D324D44EEF002249BC /* DeckHeaderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckHeaderModel.swift; sourceTree = "<group>"; };
-		EF9783F524CF7A8A007A35AA /* cards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = cards.json; path = ../../../../Downloads/cards.json; sourceTree = "<group>"; };
 		EF9F428A24D01D880073029B /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		EF9F428E24D08E140073029B /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		EF9F429424D155740073029B /* DeckDetailSectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailSectionFooterView.swift; sourceTree = "<group>"; };
@@ -193,7 +193,6 @@
 				EF628803245F3BDD00C693A4 /* Assets.xcassets */,
 				EF909C6624D19F5000AC9FD6 /* Fonts */,
 				EFFAD8452463437C00BCA4A5 /* hsDecks.xcdatamodeld */,
-				EF9783F524CF7A8A007A35AA /* cards.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -379,6 +378,8 @@
 			isa = PBXGroup;
 			children = (
 				EFFAD45C24608E5800BCA4A5 /* Cards */,
+				EF32FE8624D4814C00E393CF /* DiskProvider.swift */,
+				EF32FE8A24D49DD900E393CF /* ActualityCardProvider.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -404,7 +405,6 @@
 			isa = PBXGroup;
 			children = (
 				EF745785245F301200A9C9F8 /* Varint.swift */,
-				EF74578D245F315C00A9C9F8 /* CardsEncoder.swift */,
 				EF745788245F307D00A9C9F8 /* DeckSerializer.swift */,
 				EF74578A245F309300A9C9F8 /* Cards.swift */,
 			);
@@ -526,7 +526,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF74574D245F2D4100A9C9F8 /* LaunchScreen.storyboard in Resources */,
-				EF9783F624CF7A8B007A35AA /* cards.json in Resources */,
 				EF628804245F3BDD00C693A4 /* Assets.xcassets in Resources */,
 				EF909C6824D19F7400AC9FD6 /* Belwe.otf in Resources */,
 			);
@@ -610,6 +609,7 @@
 				EF8C5CA324689B3D000778C7 /* NewDeckViewController.swift in Sources */,
 				EF9F428F24D08E140073029B /* UIView.swift in Sources */,
 				EF0169B8246B312F00D70230 /* DecksByClassViewModel.swift in Sources */,
+				EF32FE8724D4814C00E393CF /* DiskProvider.swift in Sources */,
 				EF745775245F2ECD00A9C9F8 /* Array.swift in Sources */,
 				EF0169B6246B30E200D70230 /* DecksByClassViewController.swift in Sources */,
 				EFFAD4652462028200BCA4A5 /* DeckCategoryViewController.swift in Sources */,
@@ -627,11 +627,11 @@
 				EFFAD8472463437C00BCA4A5 /* hsDecks.xcdatamodeld in Sources */,
 				EF72714E24607106001820D0 /* UILabel.swift in Sources */,
 				EF9F428B24D01D880073029B /* UITableViewCell.swift in Sources */,
-				EF74578E245F315C00A9C9F8 /* CardsEncoder.swift in Sources */,
 				EF727149246036B3001820D0 /* SerializedDeck.swift in Sources */,
 				EFFAD4602460B33D00BCA4A5 /* DeckListTableViewCell.swift in Sources */,
 				EF74577F245F2FA500A9C9F8 /* CardType.swift in Sources */,
 				EFFAD8532463451300BCA4A5 /* Deck+CoreDataProperties.swift in Sources */,
+				EF32FE8B24D49DD900E393CF /* ActualityCardProvider.swift in Sources */,
 				EF745789245F307D00A9C9F8 /* DeckSerializer.swift in Sources */,
 				EF727147246031D3001820D0 /* DeckDetailViewContoller.swift in Sources */,
 				EF909C6A24D1A0AE00AC9FD6 /* Font.swift in Sources */,
