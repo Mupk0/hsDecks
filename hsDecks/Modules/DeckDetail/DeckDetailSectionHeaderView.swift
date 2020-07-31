@@ -13,8 +13,8 @@ class DeckDetailSectionHeaderView: UIView {
     private let deckNameLabel = UILabel.makeForCardLabel(size: 16,
                                                          color: .white)
     
-    private let deckListTopImageView = UIImageView()
-    private let deckListBottomImageView = UIImageView()
+    private let deckListTopImageView = UIImageView(image: #imageLiteral(resourceName: "deckListTopNoShadowFinal"))
+    private let deckListBottomImageView = UIImageView(image: #imageLiteral(resourceName: "deckbuilder_frame_top_standard_desktop"))
     private let heroImageView = UIImageView()
     
     override init(frame: CGRect) {
@@ -31,19 +31,12 @@ class DeckDetailSectionHeaderView: UIView {
     func setDetailHeader(_ deckHeader: DeckHeaderModel) {
         
         deckNameLabel.text = deckHeader.deckName
+        heroImageView.image = deckHeader.deckClass.portraitImage
         
         addSubview(deckListTopImageView)
         addSubview(heroImageView)
         addSubview(deckListBottomImageView)
         addSubview(deckNameLabel)
-        
-        let heroImage = UIImage(named: "\(deckHeader.deckClass.rawValue)_portrait")
-        let deckListTopImage = UIImage(named: "deckListTopNoShadowFinal")
-        let deckListBottomImage = UIImage(named: "deckbuilder_frame_top_standard_desktop")
-        
-        deckListBottomImageView.image = deckListBottomImage
-        deckListTopImageView.image = deckListTopImage
-        heroImageView.image = heroImage
         
         deckListTopImageView.translatesAutoresizingMaskIntoConstraints = false
         deckListTopImageView.topAnchor.constraint(equalTo: topAnchor).isActive = true

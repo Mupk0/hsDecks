@@ -24,7 +24,7 @@ class DeckDetailTableViewCell: UITableViewCell {
     private let cardCostLabel = UILabel()
     private let cardCounterLabel = UILabel()
     
-    private let backImageView = UIImageView(image: UIImage(named: "deckListMiddleNoShadow") ?? UIImage())
+    private let backImageView = UIImageView(image: #imageLiteral(resourceName: "deckListMiddleNoShadow"))
     private let gradientColor = UIColor(red: 0.16,
                                         green: 0.18,
                                         blue: 0.24,
@@ -82,13 +82,9 @@ extension DeckDetailTableViewCell: ViewConfiguration {
         selectionStyle = .none
         backgroundColor = UIColor(red: 0.21, green: 0.16, blue: 0.27, alpha: 1.00)
         
-        let cardLeftImage = UIImage(named: "card_list_left") ?? UIImage()
-        let cardMiddleImage = UIImage(named: "card_list_middle") ?? UIImage()
-        let cardRightImage = UIImage(named: "card_list_right") ?? UIImage()
-        
-        cardCostView.backgroundColor = UIColor(patternImage: cardLeftImage)
-        frontView.backgroundColor = UIColor(patternImage: cardMiddleImage)
-        rightView.backgroundColor = UIColor(patternImage: cardRightImage)
+        cardCostView.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "card_list_left"))
+        frontView.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "card_list_middle"))
+        rightView.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "card_list_right"))
         cardNameBackgroundView.backgroundColor = gradientColor
         
         cardCostLabel.textAlignment = .center
@@ -174,7 +170,7 @@ extension DeckDetailTableViewCell: ViewConfiguration {
         output.tileImage
             .drive(onNext: { [weak self] id in
                 guard let self = self else { return }
-                let url = "https://art.hearthstonejson.com/v1/tiles/\(id).png"
+                let url = "\(Constants.imageTilesUrl)\(id).png"
                 self.cardImageView.fetchImage(with: url)
             })
             .disposed(by: disposeBag)

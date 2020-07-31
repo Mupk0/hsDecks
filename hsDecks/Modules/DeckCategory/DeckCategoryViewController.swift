@@ -30,8 +30,7 @@ extension DeckCategoryViewController: ViewConfiguration {
     func configureViews() {
         tableView.separatorInset = .zero
         
-        let parchmentImage = UIImage(named: "parchment") ?? UIImage()
-        tableView.backgroundColor = UIColor(patternImage: parchmentImage)
+        tableView.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "parchment"))
     }
     
     func setupConstraints() {

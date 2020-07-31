@@ -14,6 +14,7 @@
 		EF32FE8724D4814C00E393CF /* DiskProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF32FE8624D4814C00E393CF /* DiskProvider.swift */; };
 		EF32FE8B24D49DD900E393CF /* ActualityCardProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF32FE8A24D49DD900E393CF /* ActualityCardProvider.swift */; };
 		EF44153524D4AF8B00BF0862 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF44153424D4AF8B00BF0862 /* ImageView.swift */; };
+		EF44153A24D4C53B00BF0862 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF44153924D4C53B00BF0862 /* Constants.swift */; };
 		EF45129424D1A75400FF22C0 /* Belwe.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF909C6724D19F7400AC9FD6 /* Belwe.otf */; };
 		EF45129524D1A75500FF22C0 /* Belwe.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF909C6724D19F7400AC9FD6 /* Belwe.otf */; };
 		EF628804245F3BDD00C693A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF628803245F3BDD00C693A4 /* Assets.xcassets */; };
@@ -90,6 +91,7 @@
 		EF32FE8624D4814C00E393CF /* DiskProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskProvider.swift; sourceTree = "<group>"; };
 		EF32FE8A24D49DD900E393CF /* ActualityCardProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualityCardProvider.swift; sourceTree = "<group>"; };
 		EF44153424D4AF8B00BF0862 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		EF44153924D4C53B00BF0862 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EF628803245F3BDD00C693A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF727146246031D3001820D0 /* DeckDetailViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailViewContoller.swift; sourceTree = "<group>"; };
 		EF72714B24603F8B001820D0 /* DeckDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				EFFAD8452463437C00BCA4A5 /* hsDecks.xcdatamodeld */,
 				EF628803245F3BDD00C693A4 /* Assets.xcassets */,
 				EF909C6624D19F5000AC9FD6 /* Fonts */,
+				EF44153924D4C53B00BF0862 /* Constants.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -636,6 +639,7 @@
 				EF72714C24603F8B001820D0 /* DeckDetailTableViewCell.swift in Sources */,
 				EF745783245F2FDC00A9C9F8 /* Race.swift in Sources */,
 				EF74577D245F2F5500A9C9F8 /* CardSet.swift in Sources */,
+				EF44153A24D4C53B00BF0862 /* Constants.swift in Sources */,
 				EF9409D424D44EEF002249BC /* DeckHeaderModel.swift in Sources */,
 				EF745778245F2EE700A9C9F8 /* Card.swift in Sources */,
 				EF0169BA246B339D00D70230 /* ClassSelectViewController.swift in Sources */,

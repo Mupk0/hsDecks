@@ -13,8 +13,9 @@ class ActualityCardProvider {
     static var shared = ActualityCardProvider()
     
     func checkCardActuality() {
-        let latestUrlString = "https://api.hearthstonejson.com/v1/latest/"
-        let latestUrl = URL(string: latestUrlString)!
+        
+        let latestUrl = URL(string: Constants.latestDirectoryUrl)!
+        
         URLSession.shared.dataTask(with: latestUrl) { [weak self] data, response, error in
             if let error = error { print(error.localizedDescription); return }
             guard let _ = data, let response = response else { return }
@@ -35,8 +36,9 @@ class ActualityCardProvider {
     }
     
     private func loadCardsDataAndSave(version: Int) {
-        let cardsDataStringURL = "https://api.hearthstonejson.com/v1/latest/enUS/cards.collectible.json"
-        let cardsDataURL = URL(string: cardsDataStringURL)!
+        
+        let cardsDataURL = URL(string: Constants.latestCardDataUrl)!
+        
         URLSession.shared.dataTask(with: cardsDataURL) { data, response, error in
             if let error = error { print(error.localizedDescription); return }
             guard let data = data, let _ = response else { return }

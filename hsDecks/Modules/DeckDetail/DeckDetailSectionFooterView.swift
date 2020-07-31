@@ -10,12 +10,10 @@ import UIKit
 
 class DeckDetailSectionFooterView: UIView {
     
-    private let sectionBottomImage = UIImage(named: "deckListSectionBottom") ?? UIImage()
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let sectionBottomImageVIew = UIImageView(image: sectionBottomImage)
+        let sectionBottomImageVIew = UIImageView(image: #imageLiteral(resourceName: "deckListSectionBottom"))
         
         addSubview(sectionBottomImageVIew)
         

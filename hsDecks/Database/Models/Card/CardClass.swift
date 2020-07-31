@@ -6,7 +6,7 @@
 //  Copyright © 2020 Dmitry Kulagin. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum CardClass: String {
     case neutral = "",
@@ -74,6 +74,33 @@ enum CardClass: String {
             return "Warrior"
         case .demonHunter:
             return "Demon Hunter"
+        }
+    }
+    
+    var portraitImage: UIImage {
+        switch self {
+        case .neutral:
+            return UIImage()
+        case .druid:
+            return #imageLiteral(resourceName: "HERO_06_portrait")
+        case .hunter:
+            return #imageLiteral(resourceName: "HERO_05_portrait")
+        case .mage:
+            return #imageLiteral(resourceName: "HERO_08_portrait")
+        case .paladin:
+            return #imageLiteral(resourceName: "HERO_04_portrait")
+        case .priest:
+            return #imageLiteral(resourceName: "HERO_09_portrait")
+        case .rogue:
+            return #imageLiteral(resourceName: "HERO_03_portrait")
+        case .shaman:
+            return #imageLiteral(resourceName: "HERO_02_portrait")
+        case .warlock:
+            return #imageLiteral(resourceName: "HERO_07_portrait")
+        case .warrior:
+            return #imageLiteral(resourceName: "HERO_01_portrait")
+        case .demonHunter:
+            return #imageLiteral(resourceName: "HERO_10_portrait")
         }
     }
 }

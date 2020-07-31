@@ -98,14 +98,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate {
     func customizeNavigationBar() {
-        if let myImage = UIImage(named: "bg_wood_tile") {
-            let nav = UINavigationBar.appearance()
-            nav.setBackgroundImage(myImage,
-                                   for: .default)
-            
-            nav.barStyle = .blackTranslucent
-            nav.isTranslucent = false
-            nav.barTintColor = .white
-        }
+        let navBar = UINavigationBar.appearance()
+        navBar.setBackgroundImage(#imageLiteral(resourceName: "bg_wood_tile"),
+                               for: .default)
+        
+        navBar.barStyle = .blackTranslucent
+        navBar.isTranslucent = false
+        navBar.barTintColor = .white
     }
 }
