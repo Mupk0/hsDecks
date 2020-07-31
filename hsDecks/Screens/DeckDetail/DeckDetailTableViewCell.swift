@@ -139,7 +139,7 @@ extension DeckDetailTableViewCell: ViewConfiguration {
         cardNameLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
         cardNameLabel.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         cardNameLabel.leadingAnchor.constraint(equalTo: cardCostView.trailingAnchor, constant: 5).isActive = true
-        cardNameLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        cardNameLabel.trailingAnchor.constraint(equalTo: cardCounterLabel.leadingAnchor).isActive = true
         
         cardCounterLabel.translatesAutoresizingMaskIntoConstraints = false
         cardCounterLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true

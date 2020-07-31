@@ -23,7 +23,7 @@ enum DeckTypeSections {
             self = .Unknown
         }
     }
-
+    
     
     static let allValues = [DeckTypeSections.AllDecks, DeckTypeSections.ByClass]
 }
@@ -39,7 +39,7 @@ extension DeckTypeSections {
             return "Unknown"
         }
     }
-
+    
     var vc: UIViewController {
         switch self {
         case .AllDecks:

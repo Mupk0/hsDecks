@@ -17,7 +17,7 @@ protocol DeckDetailViewModelType {
 }
 
 class DeckDetailViewModel: DeckDetailViewModelType {
-
+    
     var navigationTitle: Observable<String>
     var cards: Observable<[Card]>
     var deckHeader: Observable<DeckHeaderModel>
@@ -34,7 +34,7 @@ class DeckDetailViewModel: DeckDetailViewModelType {
             let deckCost = cards.getDeckCost()
             let deckClass = serializeDeck.playerClass
             let deckHeader = DeckHeaderModel(deckClass: deckClass,
-                                        deckName: deck.name ?? "Standart \(deckClass.description) deck")
+                                             deckName: deck.name ?? "Standart \(deckClass.description) deck")
             
             self.cards = Observable.just(cards)
             self.deckHeader = Observable.just(deckHeader)
@@ -43,7 +43,7 @@ class DeckDetailViewModel: DeckDetailViewModelType {
         } else {
             self.cards = Observable.just([])
             self.deckHeader = Observable.just(DeckHeaderModel(deckClass: CardClass.neutral,
-                                                        deckName: ""))
+                                                              deckName: ""))
             self.navigationTitle = Observable.just("")
             self.deckCode = Observable.just("")
         }

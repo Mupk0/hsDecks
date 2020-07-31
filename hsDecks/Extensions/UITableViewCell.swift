@@ -36,7 +36,7 @@ extension UITableViewCell {
                                                                        textColor: textColor,
                                                                        outlineColor: outlineColor))
     }
-
+    
     private func outlineAttributes(font: UIFont,
                                    outlineSize: Float,
                                    textColor: UIColor,

@@ -11,13 +11,13 @@ import UIKit
 class DeckCategoryViewController: UIViewController {
     
     private let tableView = UITableView(frame: .zero, style: .plain)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
-
+        
         setupViewConfiguration()
     }
 }

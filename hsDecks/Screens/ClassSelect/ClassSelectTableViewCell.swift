@@ -49,18 +49,18 @@ extension ClassSelectTableViewCell: ViewConfiguration {
     
     func configureViews() {
         selectionStyle = .none
-
+        
         classDeckCounterView.backgroundColor = .gray
         classDeckCounterLabel.textAlignment = .center
         //classImageView.contentMode = .scaleAspectFit
     }
     
     func setupConstraints() {
-//        classImageView.translatesAutoresizingMaskIntoConstraints = false
-//        classImageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-//        classImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40).isActive = true
-//        classImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 100).isActive = true
-//        classImageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        //        classImageView.translatesAutoresizingMaskIntoConstraints = false
+        //        classImageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        //        classImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40).isActive = true
+        //        classImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 100).isActive = true
+        //        classImageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         
         classDeckCounterView.translatesAutoresizingMaskIntoConstraints = false
         classDeckCounterView.topAnchor.constraint(equalTo: topAnchor).isActive = true
@@ -86,12 +86,12 @@ extension ClassSelectTableViewCell: ViewConfiguration {
         let input = ClassSelectTableViewCellViewModel.Input(trigger: layoutSubviews)
         
         let output = viewModel.transform(input: input)
-//        output.classImage
-//            .drive(onNext: { [weak self] (image) in
-//                guard let self = self else {return}
-//                self.classImageView.image = image
-//            })
-//            .disposed(by: disposeBag)
+        //        output.classImage
+        //            .drive(onNext: { [weak self] (image) in
+        //                guard let self = self else {return}
+        //                self.classImageView.image = image
+        //            })
+        //            .disposed(by: disposeBag)
         output.classDescription
             .drive(classNameLabel.rx.text)
             .disposed(by: disposeBag)

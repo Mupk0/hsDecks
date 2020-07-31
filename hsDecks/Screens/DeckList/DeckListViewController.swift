@@ -29,7 +29,7 @@ class DeckListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupViewConfiguration()
     }
 }
@@ -65,27 +65,27 @@ extension DeckListViewController: ViewConfiguration {
                                                  reuseIdentifier: DeckListTableViewCell.reuseIdentifier,
                                                  viewModel: DeckListTableViewCellViewModel(deck))
                 return cell
-            }.disposed(by: disposeBag)
+        }.disposed(by: disposeBag)
         // MARK: - event handling when cell selected
         tableView.rx.modelSelected(Deck.self)
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] in
                 let vc = DeckDetailViewContoller(viewModel: DeckDetailViewModel(deck: $0))
                 self?.navigationController?.pushViewController(vc, animated: true)
-        }).disposed(by: disposeBag)
+            }).disposed(by: disposeBag)
         // MARK: - event handling when add button tapped, and add todo to persistent storage via viewmodel
-         rightBarButtonItem.rx.tap
-             .subscribe { [weak self] _ in
+        rightBarButtonItem.rx.tap
+            .subscribe { [weak self] _ in
                 guard let strongSelf = self else { return }
                 
                 let newDeckViewController = NewDeckViewController()
-                 
+                
                 newDeckViewController.newDeck.subscribe(onNext :{ [weak self] deck in
                     self?.viewModel.addDeck(deckCode: deck.deckCode, deckName: deck.deckName, deckClass: deck.deckClass)
                     newDeckViewController.dismiss(animated: true)
-                    }).disposed(by: strongSelf.disposeBag)
+                }).disposed(by: strongSelf.disposeBag)
                 self?.present(newDeckViewController, animated: true)
-         }.disposed(by: disposeBag)
+        }.disposed(by: disposeBag)
         // MARK: - subscribe to tableView when item has been deleted, then remove todo to persistent storage via viewmodel
         tableView.rx.itemDeleted
             .subscribe(onNext : { [weak self] indexPath in

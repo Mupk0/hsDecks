@@ -20,8 +20,8 @@ extension Font: FontItem {
     var font: UIFont {
         switch self {
         case .belwe(let size):
-            return UIFont(name:"BelweBdBTRusbyme-Bold", size: size) ?? .systemFont(ofSize: size)
+            return UIFont(name:"BelweBdBTRusbyme-Bold",
+                          size: size) ?? .systemFont(ofSize: size)
         }
     }
 }
-

@@ -14,7 +14,7 @@ extension UILabel {
         let label = UILabel()
         label.font = Font.belwe(size: size).font
         label.textColor = color
-
+        
         return label
     }
 }

@@ -28,7 +28,7 @@ class DecksByClassViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupViewConfiguration()
     }
 }
@@ -60,14 +60,14 @@ extension DecksByClassViewController: ViewConfiguration {
                                                  reuseIdentifier: DeckListTableViewCell.reuseIdentifier,
                                                  viewModel: DeckListTableViewCellViewModel(deck))
                 return cell
-            }.disposed(by: disposeBag)
+        }.disposed(by: disposeBag)
         // MARK: - event handling when cell selected
         tableView.rx.modelSelected(Deck.self)
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] in
                 let vc = DeckDetailViewContoller(viewModel: DeckDetailViewModel(deck: $0))
                 self?.navigationController?.pushViewController(vc, animated: true)
-        }).disposed(by: disposeBag)
+            }).disposed(by: disposeBag)
         // MARK: - subscribe to tableView when item has been deleted, then remove todo to persistent storage via viewmodel
         tableView.rx.itemDeleted
             .subscribe(onNext : { [weak self] indexPath in
