@@ -13,6 +13,7 @@
 		EF0169BA246B339D00D70230 /* ClassSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0169B9246B339D00D70230 /* ClassSelectViewController.swift */; };
 		EF32FE8724D4814C00E393CF /* DiskProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF32FE8624D4814C00E393CF /* DiskProvider.swift */; };
 		EF32FE8B24D49DD900E393CF /* ActualityCardProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF32FE8A24D49DD900E393CF /* ActualityCardProvider.swift */; };
+		EF44153524D4AF8B00BF0862 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF44153424D4AF8B00BF0862 /* ImageView.swift */; };
 		EF45129424D1A75400FF22C0 /* Belwe.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF909C6724D19F7400AC9FD6 /* Belwe.otf */; };
 		EF45129524D1A75500FF22C0 /* Belwe.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF909C6724D19F7400AC9FD6 /* Belwe.otf */; };
 		EF628804245F3BDD00C693A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF628803245F3BDD00C693A4 /* Assets.xcassets */; };
@@ -89,6 +90,7 @@
 		EF0169B9246B339D00D70230 /* ClassSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassSelectViewController.swift; sourceTree = "<group>"; };
 		EF32FE8624D4814C00E393CF /* DiskProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskProvider.swift; sourceTree = "<group>"; };
 		EF32FE8A24D49DD900E393CF /* ActualityCardProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualityCardProvider.swift; sourceTree = "<group>"; };
+		EF44153424D4AF8B00BF0862 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		EF628803245F3BDD00C693A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF727146246031D3001820D0 /* DeckDetailViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailViewContoller.swift; sourceTree = "<group>"; };
 		EF727148246036B3001820D0 /* SerializedDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerializedDeck.swift; sourceTree = "<group>"; };
@@ -256,7 +258,7 @@
 			path = NewDeck;
 			sourceTree = "<group>";
 		};
-		EF72714A24603F74001820D0 /* Screens */ = {
+		EF72714A24603F74001820D0 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
 				EF35494A24CE0EFA00144BBB /* DeckCategory */,
@@ -266,7 +268,7 @@
 				EF35494724CE0B1300144BBB /* DeckList */,
 				EF72714524603150001820D0 /* NewDeck */,
 			);
-			path = Screens;
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		EF745736245F2D4000A9C9F8 = {
@@ -294,7 +296,7 @@
 		EF745741245F2D4100A9C9F8 /* hsDecks */ = {
 			isa = PBXGroup;
 			children = (
-				EF72714A24603F74001820D0 /* Screens */,
+				EF72714A24603F74001820D0 /* Modules */,
 				EF745776245F2EDB00A9C9F8 /* Models */,
 				EF745779245F2F1E00A9C9F8 /* Enums */,
 				EF745771245F2EA200A9C9F8 /* Extensions */,
@@ -378,8 +380,8 @@
 			isa = PBXGroup;
 			children = (
 				EFFAD45C24608E5800BCA4A5 /* Cards */,
-				EF32FE8624D4814C00E393CF /* DiskProvider.swift */,
 				EF32FE8A24D49DD900E393CF /* ActualityCardProvider.swift */,
+				EF44153424D4AF8B00BF0862 /* ImageView.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -415,6 +417,7 @@
 			isa = PBXGroup;
 			children = (
 				EFFAD854246345C900BCA4A5 /* DeckDataAccessProvider.swift */,
+				EF32FE8624D4814C00E393CF /* DiskProvider.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -638,6 +641,7 @@
 				EF8C5CA52469433C000778C7 /* NewDeck.swift in Sources */,
 				EFFAD46D2462A5DA00BCA4A5 /* ObservableType.swift in Sources */,
 				EFFAD467246297B500BCA4A5 /* Dictionary.swift in Sources */,
+				EF44153524D4AF8B00BF0862 /* ImageView.swift in Sources */,
 				EFFAD855246345C900BCA4A5 /* DeckDataAccessProvider.swift in Sources */,
 				EF745786245F301200A9C9F8 /* Varint.swift in Sources */,
 				EF745745245F2D4100A9C9F8 /* DeckListViewController.swift in Sources */,
