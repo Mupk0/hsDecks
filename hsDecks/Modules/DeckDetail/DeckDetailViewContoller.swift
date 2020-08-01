@@ -11,8 +11,11 @@ import RxCocoa
 
 class DeckDetailViewContoller: UIViewController {
     
-    private let tableView = UITableView(frame: .zero, style: .grouped)
-    private let rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: nil)
+    private let tableView = UITableView(frame: .zero,
+                                        style: .grouped)
+    private let rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action,
+                                                     target: self,
+                                                     action: nil)
     
     private let viewModel: DeckDetailViewModel
     private let disposeBag = DisposeBag()
@@ -43,7 +46,10 @@ extension DeckDetailViewContoller: ViewConfiguration {
         tableView.separatorStyle = .none
         tableView.separatorInset = .zero
         
-        tableView.backgroundColor = UIColor(red: 0.21, green: 0.16, blue: 0.27, alpha: 1.00)
+        tableView.backgroundColor = UIColor(red: 0.21,
+                                            green: 0.16,
+                                            blue: 0.27,
+                                            alpha: 1.00)
         
         navigationItem.rightBarButtonItem = rightBarButtonItem
     }
@@ -120,7 +126,8 @@ extension DeckDetailViewContoller: UITableViewDelegate {
         return footerView
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView,
+                   heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }
 }

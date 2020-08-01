@@ -10,7 +10,8 @@ import UIKit
 
 class DeckCategoryViewController: UIViewController {
     
-    private let tableView = UITableView(frame: .zero, style: .plain)
+    private let tableView = UITableView(frame: .zero,
+                                        style: .plain)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,8 +49,10 @@ extension DeckCategoryViewController: ViewConfiguration {
 
 extension DeckCategoryViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(DeckTypeSections.init(id: indexPath.row).vc, animated: true)
+    func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath) {
+        let vc = DeckTypeSections.init(id: indexPath.row).vc
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

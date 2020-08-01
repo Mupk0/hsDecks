@@ -37,7 +37,9 @@ class DeckDetailTableViewCell: UITableViewCell {
     private var viewModel: DeckDetailTableViewCellViewModel
     private var disposeBag = DisposeBag()
     
-    init(style: UITableViewCell.CellStyle, reuseIdentifier: String?, viewModel: DeckDetailTableViewCellViewModel) {
+    init(style: UITableViewCell.CellStyle,
+         reuseIdentifier: String?,
+         viewModel: DeckDetailTableViewCellViewModel) {
         self.viewModel = viewModel
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         

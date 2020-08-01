@@ -12,7 +12,9 @@ import RxCocoa
 class DeckListViewController: UIViewController {
     
     private let tableView = UITableView(frame: .zero, style: .plain)
-    private let rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
+    private let rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
+                                                     target: self,
+                                                     action: nil)
     
     private let viewModel: DeckListViewModel
     private let disposeBag = DisposeBag()

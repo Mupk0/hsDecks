@@ -10,7 +10,8 @@ import UIKit
 
 class ClassSelectViewController: UIViewController {
     
-    private let tableView = UITableView(frame: .zero, style: .plain)
+    private let tableView = UITableView(frame: .zero,
+                                        style: .plain)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +52,8 @@ extension ClassSelectViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath) {
         let cardClass = CardClass.init(id: indexPath.row).description
-        let vc = DecksByClassViewController(viewModel: DecksByClassViewModel(deckClass: cardClass))
+        let viewModel = DecksByClassViewModel(deckClass: cardClass)
+        let vc = DecksByClassViewController(viewModel: viewModel)
         navigationController?.pushViewController(vc, animated: true)
     }
 }

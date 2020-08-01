@@ -11,7 +11,8 @@ import RxCocoa
 
 class DecksByClassViewController: UIViewController {
     
-    private let tableView = UITableView(frame: .zero, style: .plain)
+    private let tableView = UITableView(frame: .zero,
+                                        style: .plain)
     
     private let viewModel: DecksByClassViewModel
     private let disposeBag = DisposeBag()

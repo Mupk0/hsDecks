@@ -20,7 +20,9 @@ class ClassSelectTableViewCell: UITableViewCell {
     private var viewModel: ClassSelectTableViewCellViewModel
     private var disposeBag = DisposeBag()
     
-    init(style: UITableViewCell.CellStyle, reuseIdentifier: String?, viewModel: ClassSelectTableViewCellViewModel) {
+    init(style: UITableViewCell.CellStyle,
+         reuseIdentifier: String?,
+         viewModel: ClassSelectTableViewCellViewModel) {
         self.viewModel = viewModel
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
