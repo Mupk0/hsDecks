@@ -13,10 +13,9 @@ class ClassSelectTableViewCell: UITableViewCell {
     
     static let reuseIdentifier = "ClassSelectTableViewCell"
     
-    private let classDeckCounterView = UIView()
     private let classNameLabel = UILabel.makeForCardLabel()
     private let classDeckCounterLabel = UILabel.makeForCardLabel(color: .white)
-    //private let classImageView = UIImageView()
+    private let classImageView = UIImageView()
     
     private var viewModel: ClassSelectTableViewCellViewModel
     private var disposeBag = DisposeBag()
@@ -33,7 +32,7 @@ class ClassSelectTableViewCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
-        //classImageView.image = nil
+        classImageView.image = nil
         classNameLabel.text = nil
         classDeckCounterLabel.text = nil
     }
@@ -41,8 +40,7 @@ class ClassSelectTableViewCell: UITableViewCell {
 
 extension ClassSelectTableViewCell: ViewConfiguration {
     func buildViewHierarchy() {
-        //addSubview(classImageView)
-        addSubview(classDeckCounterView)
+        addSubview(classImageView)
         addSubview(classNameLabel)
         addSubview(classDeckCounterLabel)
     }
@@ -52,33 +50,27 @@ extension ClassSelectTableViewCell: ViewConfiguration {
         
         backgroundColor = .clear
         classDeckCounterLabel.textAlignment = .center
-        //classImageView.contentMode = .scaleAspectFit
+        classImageView.contentMode = .scaleAspectFit
     }
     
     func setupConstraints() {
-        //        classImageView.translatesAutoresizingMaskIntoConstraints = false
-        //        classImageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        //        classImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40).isActive = true
-        //        classImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 100).isActive = true
-        //        classImageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        
-        classDeckCounterView.translatesAutoresizingMaskIntoConstraints = false
-        classDeckCounterView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        classDeckCounterView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        classDeckCounterView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        classDeckCounterView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        classImageView.translatesAutoresizingMaskIntoConstraints = false
+        classImageView.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
+        classImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
+        classImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
+        classImageView.widthAnchor.constraint(equalToConstant: 40).isActive = true
         
         classNameLabel.translatesAutoresizingMaskIntoConstraints = false
         classNameLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
         classNameLabel.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        classNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
-        classNameLabel.trailingAnchor.constraint(equalTo: classDeckCounterView.trailingAnchor).isActive = true
+        classNameLabel.leadingAnchor.constraint(equalTo: classImageView.trailingAnchor, constant: 10).isActive = true
+        classNameLabel.trailingAnchor.constraint(equalTo: classDeckCounterLabel.leadingAnchor).isActive = true
         
         classDeckCounterLabel.translatesAutoresizingMaskIntoConstraints = false
         classDeckCounterLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
         classDeckCounterLabel.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        classDeckCounterLabel.leadingAnchor.constraint(equalTo: classDeckCounterView.leadingAnchor).isActive = true
-        classDeckCounterLabel.trailingAnchor.constraint(equalTo: classDeckCounterView.trailingAnchor).isActive = true
+        classDeckCounterLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        classDeckCounterLabel.widthAnchor.constraint(equalToConstant: 60).isActive = true
     }
     
     func bindViewModel() {
@@ -86,12 +78,12 @@ extension ClassSelectTableViewCell: ViewConfiguration {
         let input = ClassSelectTableViewCellViewModel.Input(trigger: layoutSubviews)
         
         let output = viewModel.transform(input: input)
-        //        output.classImage
-        //            .drive(onNext: { [weak self] (image) in
-        //                guard let self = self else {return}
-        //                self.classImageView.image = image
-        //            })
-        //            .disposed(by: disposeBag)
+        output.classImage
+            .drive(onNext: { [weak self] (image) in
+                guard let self = self else {return}
+                self.classImageView.image = image
+            })
+            .disposed(by: disposeBag)
         output.classDescription
             .drive(classNameLabel.rx.text)
             .disposed(by: disposeBag)
@@ -100,7 +92,7 @@ extension ClassSelectTableViewCell: ViewConfiguration {
                 guard let self = self else { return }
                 let label = self.classDeckCounterLabel
                 label.attributedText = OutlineText.setAttributedString(string: name,
-                                                                       font: Font.belwe(size: 20).font,
+                                                                       font: Font.belwe(size: 24).font,
                                                                        outlineSize: 3,
                                                                        textColor: Color.counterColor,
                                                                        outlineColor: .black)

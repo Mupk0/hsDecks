@@ -30,6 +30,7 @@ extension ClassSelectViewController: ViewConfiguration {
     func configureViews() {
         navigationItem.title = "Hero Class List"
         
+        tableView.rowHeight = 60
         tableView.separatorInset = .zero
         tableView.setBackgroundParchment()
     }

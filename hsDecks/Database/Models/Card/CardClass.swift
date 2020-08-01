@@ -103,4 +103,31 @@ enum CardClass: String {
             return #imageLiteral(resourceName: "HERO_10_portrait")
         }
     }
+    
+    var smallIcon: UIImage {
+        switch self {
+        case .neutral:
+            return UIImage()
+        case .druid:
+            return #imageLiteral(resourceName: "icon_Druid")
+        case .hunter:
+            return #imageLiteral(resourceName: "icon_Hunter")
+        case .mage:
+            return #imageLiteral(resourceName: "icon_Mage")
+        case .paladin:
+            return #imageLiteral(resourceName: "icon_Paladin")
+        case .priest:
+            return #imageLiteral(resourceName: "icon_Priest")
+        case .rogue:
+            return #imageLiteral(resourceName: "icon_Rogue")
+        case .shaman:
+            return #imageLiteral(resourceName: "icon_Shaman")
+        case .warlock:
+            return #imageLiteral(resourceName: "icon_Warlock")
+        case .warrior:
+            return #imageLiteral(resourceName: "icon_Warrior")
+        case .demonHunter:
+            return #imageLiteral(resourceName: "icon_demonHunter")
+        }
+    }
 }

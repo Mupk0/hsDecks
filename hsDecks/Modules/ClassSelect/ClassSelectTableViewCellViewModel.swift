@@ -22,7 +22,7 @@ class ClassSelectTableViewCellViewModel {
     struct Output {
         let classDescription: Driver<String>
         let counter: Driver<String>
-        //let classImage: Driver<UIImage>
+        let classImage: Driver<UIImage>
     }
     
     let cardClass: CardClass
@@ -41,19 +41,18 @@ class ClassSelectTableViewCellViewModel {
         let counter: Driver<String> = input.trigger
             .flatMapLatest { [weak self] (_) in
                 guard let self = self else {return Driver.empty()}
-                let cardClass = self.cardClass
-                let cardCounter = self.deckDataAccessProvider.fetchDeckClassCounter(cardClass: cardClass)
+                let cardCounter = self.deckDataAccessProvider.fetchDeckClassCounter(cardClass: self.cardClass)
                 return Driver.just(String(cardCounter))
         }
         
-        //        let classImage: Driver<UIImage> = input.trigger
-        //            .flatMapLatest { [weak self] (_) in
-        //                guard let self = self else {return Driver.empty()}
-        //                guard let id = self.viewModel.id, let image = UIImage(named: "\(id)") else {return Driver.empty()}
-        //                return Driver.just(image)
-        //            }
+        let classImage: Driver<UIImage> = input.trigger
+            .flatMapLatest { [weak self] (_) in
+                guard let self = self else {return Driver.empty()}
+                let image = self.cardClass.smallIcon
+                return Driver.just(image)
+        }
         
         return Output(classDescription: classDescription,
-                      counter: counter)
+                      counter: counter, classImage: classImage)
     }
 }

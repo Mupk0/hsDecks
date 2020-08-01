@@ -28,8 +28,6 @@ class ActualityCardProvider {
                 let savedCardsVersion = UserDefaults.standard.value(forKey: "hsCardsVersion") as? Int
                 if savedCardsVersion == nil || savedCardsVersion ?? 0 < actualVersion {
                     self?.loadCardsDataAndSave(version: actualVersion)
-                } else {
-                    print(savedCardsVersion as Any)
                 }
             }
         }.resume()
