@@ -58,7 +58,7 @@ class DeckDetailTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        cardNameGradientView.addGradientBackground(firstColor: gradientColor,
+        cardNameGradientView.addGradientBackground(firstColor: Color.gradientColor,
                                                    secondColor: .clear)
     }
 }
@@ -85,7 +85,7 @@ extension DeckDetailTableViewCell: ViewConfiguration {
         cardCostView.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "card_list_left"))
         frontView.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "card_list_middle"))
         rightView.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "card_list_right"))
-        cardNameBackgroundView.backgroundColor = gradientColor
+        cardNameBackgroundView.backgroundColor = Color.gradientColor
         
         cardCostLabel.textAlignment = .center
         cardCounterLabel.textAlignment = .center
@@ -204,7 +204,7 @@ extension DeckDetailTableViewCell: ViewConfiguration {
                                                                        font: Font.belwe(size: 18).font,
                                                                        outlineSize: 3,
                                                                        textColor: .white,
-                                                                       outlineColor: self.counterColor)
+                                                                       outlineColor: Color.counterColor)
             })
             .disposed(by: disposeBag)
         output.rarityColor

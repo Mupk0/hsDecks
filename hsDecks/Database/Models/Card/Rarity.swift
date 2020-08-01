@@ -35,7 +35,7 @@ enum Rarity: String, CaseIterable {
         case .free:
             return UIColor(red: 0.73, green: 0.58, blue: 0.38, alpha: 1.00)
         case .common:
-            return UIColor(red: 0.18, green: 0.80, blue: 0.44, alpha: 1.00)
+            return UIColor(red: 0.55, green: 0.55, blue: 0.55, alpha: 1.00)
         case .rare:
             return UIColor(red: 0.00, green: 0.44, blue: 0.87, alpha: 1.00)
         case .epic:

@@ -16,10 +16,16 @@ class DeckListTableViewCell: UITableViewCell {
     private let deckNameLabel = UILabel.makeForCardLabel()
     
     private var viewModel: DeckListTableViewCellViewModel
+    private let row: Int
     private var disposeBag = DisposeBag()
     
-    init(style: UITableViewCell.CellStyle, reuseIdentifier: String?, viewModel: DeckListTableViewCellViewModel) {
+    init(style: UITableViewCell.CellStyle,
+         reuseIdentifier: String?,
+         viewModel: DeckListTableViewCellViewModel,
+         row: Int) {
+        
         self.viewModel = viewModel
+        self.row = row
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setupViewConfiguration()
@@ -42,7 +48,8 @@ extension DeckListTableViewCell: ViewConfiguration {
     
     func configureViews() {
         selectionStyle = .none
-        backgroundColor = .clear
+        let bgColor = UIColor(red: 0.38, green: 0.26, blue: 0.15, alpha: 0.10)
+        backgroundColor = row % 2 == 0 ? .clear : bgColor
     }
     
     func setupConstraints() {

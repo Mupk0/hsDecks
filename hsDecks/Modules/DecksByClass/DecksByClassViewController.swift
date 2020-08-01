@@ -63,7 +63,8 @@ extension DecksByClassViewController: ViewConfiguration {
             .bind(to: tableView.rx.items) { (tableView, row, deck) in
                 let cell = DeckListTableViewCell(style: .default,
                                                  reuseIdentifier: DeckListTableViewCell.reuseIdentifier,
-                                                 viewModel: DeckListTableViewCellViewModel(deck))
+                                                 viewModel: DeckListTableViewCellViewModel(deck),
+                                                 row: row)
                 return cell
         }.disposed(by: disposeBag)
         // MARK: - event handling when cell selected

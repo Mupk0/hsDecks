@@ -51,7 +51,6 @@ extension ClassSelectTableViewCell: ViewConfiguration {
         selectionStyle = .none
         
         backgroundColor = .clear
-        classDeckCounterView.backgroundColor = .gray
         classDeckCounterLabel.textAlignment = .center
         //classImageView.contentMode = .scaleAspectFit
     }
@@ -97,7 +96,15 @@ extension ClassSelectTableViewCell: ViewConfiguration {
             .drive(classNameLabel.rx.text)
             .disposed(by: disposeBag)
         output.counter
-            .drive(classDeckCounterLabel.rx.text)
+            .drive(onNext: { [weak self] name in
+                guard let self = self else { return }
+                let label = self.classDeckCounterLabel
+                label.attributedText = OutlineText.setAttributedString(string: name,
+                                                                       font: Font.belwe(size: 20).font,
+                                                                       outlineSize: 3,
+                                                                       textColor: Color.counterColor,
+                                                                       outlineColor: .black)
+            })
             .disposed(by: disposeBag)
     }
 }

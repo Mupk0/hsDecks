@@ -19,6 +19,7 @@
 		EF45129524D1A75500FF22C0 /* Belwe.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF909C6724D19F7400AC9FD6 /* Belwe.otf */; };
 		EF628804245F3BDD00C693A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF628803245F3BDD00C693A4 /* Assets.xcassets */; };
 		EF6777E724D58FE5003D598B /* OutlineText.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6777E624D58FE5003D598B /* OutlineText.swift */; };
+		EF6777E924D5AC04003D598B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6777E824D5AC04003D598B /* Color.swift */; };
 		EF727147246031D3001820D0 /* DeckDetailViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF727146246031D3001820D0 /* DeckDetailViewContoller.swift */; };
 		EF72714C24603F8B001820D0 /* DeckDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF72714B24603F8B001820D0 /* DeckDetailTableViewCell.swift */; };
 		EF72714E24607106001820D0 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF72714D24607106001820D0 /* UILabel.swift */; };
@@ -95,6 +96,7 @@
 		EF44153924D4C53B00BF0862 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EF628803245F3BDD00C693A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF6777E624D58FE5003D598B /* OutlineText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineText.swift; sourceTree = "<group>"; };
+		EF6777E824D5AC04003D598B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		EF727146246031D3001820D0 /* DeckDetailViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailViewContoller.swift; sourceTree = "<group>"; };
 		EF72714B24603F8B001820D0 /* DeckDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailTableViewCell.swift; sourceTree = "<group>"; };
 		EF72714D24607106001820D0 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				EF628803245F3BDD00C693A4 /* Assets.xcassets */,
 				EF909C6624D19F5000AC9FD6 /* Fonts */,
 				EF44153924D4C53B00BF0862 /* Constants.swift */,
+				EF6777E824D5AC04003D598B /* Color.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -641,6 +644,7 @@
 				EF745781245F2FBB00A9C9F8 /* Rarity.swift in Sources */,
 				EF72714C24603F8B001820D0 /* DeckDetailTableViewCell.swift in Sources */,
 				EF745783245F2FDC00A9C9F8 /* Race.swift in Sources */,
+				EF6777E924D5AC04003D598B /* Color.swift in Sources */,
 				EF74577D245F2F5500A9C9F8 /* CardSet.swift in Sources */,
 				EF44153A24D4C53B00BF0862 /* Constants.swift in Sources */,
 				EF9409D424D44EEF002249BC /* DeckHeaderModel.swift in Sources */,
