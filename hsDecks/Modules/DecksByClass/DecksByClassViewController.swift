@@ -41,6 +41,7 @@ extension DecksByClassViewController: ViewConfiguration {
     
     func configureViews() {
         tableView.separatorInset = .zero
+        tableView.setBackgroundParchment()
     }
     
     func setupConstraints() {
@@ -52,6 +53,10 @@ extension DecksByClassViewController: ViewConfiguration {
     }
     
     func bindViewModel() {
+        viewModel.getNavigationTitle()
+            .observeOn(MainScheduler.instance)
+            .bind(to: navigationItem.rx.title)
+            .disposed(by: disposeBag)
         // MARK: - binding from ViewModel to DeckListTableViewCell
         viewModel.getDecks()
             .observeOn(MainScheduler.instance)

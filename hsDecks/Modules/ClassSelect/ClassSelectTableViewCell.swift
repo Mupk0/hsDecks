@@ -50,6 +50,7 @@ extension ClassSelectTableViewCell: ViewConfiguration {
     func configureViews() {
         selectionStyle = .none
         
+        backgroundColor = .clear
         classDeckCounterView.backgroundColor = .gray
         classDeckCounterLabel.textAlignment = .center
         //classImageView.contentMode = .scaleAspectFit

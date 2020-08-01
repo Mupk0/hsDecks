@@ -32,9 +32,9 @@ extension DeckTypeSections {
     var name: String {
         switch self {
         case .AllDecks:
-            return "All Decks"
+            return "Full Deck List"
         case .ByClass:
-            return "ByClass"
+            return "Hero Class List"
         case .Unknown:
             return "Unknown"
         }

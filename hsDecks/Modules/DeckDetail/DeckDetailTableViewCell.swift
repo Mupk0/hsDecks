@@ -178,36 +178,33 @@ extension DeckDetailTableViewCell: ViewConfiguration {
             .drive(onNext: { [weak self] name in
                 guard let self = self else { return }
                 let label = self.cardNameLabel
-                label.attributedText = self.outline(string: name,
-                                                    font: "BelweBdBTRusbyme-Bold",
-                                                    size: 20,
-                                                    outlineSize: 3,
-                                                    textColor: .white,
-                                                    outlineColor: .black)
+                label.attributedText = OutlineText.setAttributedString(string: name,
+                                                                       font: Font.belwe(size: 20).font,
+                                                                       outlineSize: 3,
+                                                                       textColor: .white,
+                                                                       outlineColor: .black)
             })
             .disposed(by: disposeBag)
         output.cost
             .drive(onNext: { [weak self] name in
                 guard let self = self else { return }
                 let label = self.cardCostLabel
-                label.attributedText = self.outline(string: name,
-                                                    font: "BelweBdBTRusbyme-Bold",
-                                                    size: 26,
-                                                    outlineSize: 3,
-                                                    textColor: .white,
-                                                    outlineColor: .black)
+                label.attributedText = OutlineText.setAttributedString(string: name,
+                                                                       font: Font.belwe(size: 26).font,
+                                                                       outlineSize: 3,
+                                                                       textColor: .white,
+                                                                       outlineColor: .black)
             })
             .disposed(by: disposeBag)
         output.count
             .drive(onNext: { [weak self] name in
                 guard let self = self else { return }
                 let label = self.cardCounterLabel
-                label.attributedText = self.outline(string: name,
-                                                    font: "BelweBdBTRusbyme-Bold",
-                                                    size: 18,
-                                                    outlineSize: 3,
-                                                    textColor: .white,
-                                                    outlineColor: self.counterColor)
+                label.attributedText = OutlineText.setAttributedString(string: name,
+                                                                       font: Font.belwe(size: 18).font,
+                                                                       outlineSize: 3,
+                                                                       textColor: .white,
+                                                                       outlineColor: self.counterColor)
             })
             .disposed(by: disposeBag)
         output.rarityColor

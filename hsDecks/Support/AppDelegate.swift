@@ -99,11 +99,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
     func customizeNavigationBar() {
         let navBar = UINavigationBar.appearance()
-        navBar.setBackgroundImage(#imageLiteral(resourceName: "bg_wood_tile"),
-                               for: .default)
+        let backgroundImage = #imageLiteral(resourceName: "bg_wood_tile").stretchableImage(withLeftCapWidth: 0, topCapHeight: 0)
+        navBar.shadowImage = UIImage()
+        navBar.setBackgroundImage(backgroundImage,
+                                  for: .default)
         
         navBar.barStyle = .blackTranslucent
         navBar.isTranslucent = false
         navBar.barTintColor = .white
+        
+        let attributes = OutlineText.setAttributes(font:Font.belwe(size: 20).font,
+                                                   outlineSize: 3,
+                                                   textColor: .white,
+                                                   outlineColor: .black)
+        navBar.titleTextAttributes = attributes
     }
 }

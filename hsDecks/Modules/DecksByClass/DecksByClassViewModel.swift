@@ -12,6 +12,7 @@ import RxCocoa
 class DecksByClassViewModel {
     
     private var deckList = BehaviorRelay<[Deck]>(value: [])
+    private var navigationTitle = BehaviorRelay<String>(value: "")
     private var deckDataAccessProvider = DeckDataAccessProvider()
     
     private let disposeBag = DisposeBag()
@@ -23,12 +24,17 @@ class DecksByClassViewModel {
     public func getDecks() -> Observable<[Deck]> {
         return deckList.asObservable()
     }
+    public func getNavigationTitle() -> Observable<String> {
+        return navigationTitle.asObservable()
+    }
     // MARK: - fetching Decks from Core Data and update observable todos
     private func fetchDeckListAndUpdateObservableDecks(deckClass: String) {
         deckDataAccessProvider.fetchObservableData()
             .map({ $0.filter({ $0.deckClass == deckClass }) })
             .subscribe(onNext : { [weak self] deckList in
                 self?.deckList.accept(deckList)
+                let title = "\(deckClass) Decks"
+                self?.navigationTitle.accept(title)
             })
             .disposed(by: disposeBag)
     }

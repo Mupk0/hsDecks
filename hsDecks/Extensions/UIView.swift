@@ -18,4 +18,8 @@ extension UIView {
         gradientLayer.endPoint = CGPoint(x: 1, y: 0)
         layer.insertSublayer(gradientLayer, at: 0)
     }
+    
+    func setBackgroundParchment() {
+        self.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "parchment"))
+    }
 }

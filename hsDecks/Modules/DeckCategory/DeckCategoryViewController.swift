@@ -25,12 +25,14 @@ class DeckCategoryViewController: UIViewController {
 extension DeckCategoryViewController: ViewConfiguration {
     func buildViewHierarchy() {
         view.addSubview(tableView)
+        
+        navigationItem.title = "hsDecks"
     }
     
     func configureViews() {
         tableView.separatorInset = .zero
         
-        tableView.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "parchment"))
+        tableView.setBackgroundParchment()
     }
     
     func setupConstraints() {
@@ -60,6 +62,7 @@ extension DeckCategoryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
+        cell.textLabel?.font = Font.belwe(size: 20).font
         cell.textLabel?.text = DeckTypeSections.init(id: indexPath.row).name
         cell.selectionStyle = .none
         cell.backgroundColor = .clear
