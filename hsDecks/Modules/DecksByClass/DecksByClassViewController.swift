@@ -14,6 +14,11 @@ class DecksByClassViewController: UIViewController {
     private let tableView = UITableView(frame: .zero,
                                         style: .plain)
     
+    private let leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "back_button_mini").withRenderingMode(.alwaysOriginal),
+                                                    style:.plain,
+                                                    target: self,
+                                                    action: nil)
+    
     private let viewModel: DecksByClassViewModel
     private let disposeBag = DisposeBag()
     
@@ -41,6 +46,8 @@ extension DecksByClassViewController: ViewConfiguration {
     }
     
     func configureViews() {
+        navigationItem.leftBarButtonItem = leftBarButtonItem
+        
         tableView.separatorInset = .zero
         tableView.setBackgroundParchment()
     }
@@ -58,6 +65,12 @@ extension DecksByClassViewController: ViewConfiguration {
             .observeOn(MainScheduler.instance)
             .bind(to: navigationItem.rx.title)
             .disposed(by: disposeBag)
+        // MARK: - event handling when back button tapped
+        leftBarButtonItem.rx.tap
+            .observeOn(MainScheduler.instance)
+            .subscribe { [weak self] _ in
+                self?.navigationController?.popViewController(animated: true)
+        }.disposed(by: disposeBag)
         // MARK: - binding from ViewModel to DeckListTableViewCell
         viewModel.getDecks()
             .observeOn(MainScheduler.instance)

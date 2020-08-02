@@ -52,6 +52,7 @@
 		EF9F428B24D01D880073029B /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9F428A24D01D880073029B /* UITableViewCell.swift */; };
 		EF9F428F24D08E140073029B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9F428E24D08E140073029B /* UIView.swift */; };
 		EF9F429524D155740073029B /* DeckDetailSectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9F429424D155740073029B /* DeckDetailSectionFooterView.swift */; };
+		EFCF3C8924D6EFE3007B470C /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCF3C8824D6EFE3007B470C /* CustomButton.swift */; };
 		EFFAD45E2460928C00BCA4A5 /* DeckDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD45D2460928C00BCA4A5 /* DeckDetailViewModel.swift */; };
 		EFFAD4602460B33D00BCA4A5 /* DeckListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD45F2460B33D00BCA4A5 /* DeckListTableViewCell.swift */; };
 		EFFAD4632461E64100BCA4A5 /* DeckListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD4622461E64100BCA4A5 /* DeckListViewModel.swift */; };
@@ -135,6 +136,7 @@
 		EF9F428A24D01D880073029B /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		EF9F428E24D08E140073029B /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		EF9F429424D155740073029B /* DeckDetailSectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailSectionFooterView.swift; sourceTree = "<group>"; };
+		EFCF3C8824D6EFE3007B470C /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		EFFAD45D2460928C00BCA4A5 /* DeckDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailViewModel.swift; sourceTree = "<group>"; };
 		EFFAD45F2460B33D00BCA4A5 /* DeckListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckListTableViewCell.swift; sourceTree = "<group>"; };
 		EFFAD4622461E64100BCA4A5 /* DeckListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckListViewModel.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 			children = (
 				EF44153424D4AF8B00BF0862 /* ImageView.swift */,
 				EF6777E624D58FE5003D598B /* OutlineText.swift */,
+				EFCF3C8824D6EFE3007B470C /* CustomButton.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -625,6 +628,7 @@
 				EF9F429524D155740073029B /* DeckDetailSectionFooterView.swift in Sources */,
 				EF74577B245F2F2A00A9C9F8 /* CardClass.swift in Sources */,
 				EFFAD45E2460928C00BCA4A5 /* DeckDetailViewModel.swift in Sources */,
+				EFCF3C8924D6EFE3007B470C /* CustomButton.swift in Sources */,
 				EF74578B245F309300A9C9F8 /* Cards.swift in Sources */,
 				EFFAD4632461E64100BCA4A5 /* DeckListViewModel.swift in Sources */,
 				EF8860FB24CEC90D00637541 /* ClassSelectTableViewCellViewModel.swift in Sources */,

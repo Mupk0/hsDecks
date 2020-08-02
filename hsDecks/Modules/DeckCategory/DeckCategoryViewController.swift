@@ -26,13 +26,12 @@ class DeckCategoryViewController: UIViewController {
 extension DeckCategoryViewController: ViewConfiguration {
     func buildViewHierarchy() {
         view.addSubview(tableView)
-        
-        navigationItem.title = "hsDecks"
     }
     
     func configureViews() {
-        tableView.separatorInset = .zero
+        navigationItem.title = "hsDecks"
         
+        tableView.separatorInset = .zero
         tableView.setBackgroundParchment()
     }
     

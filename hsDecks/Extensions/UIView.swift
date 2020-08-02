@@ -22,4 +22,19 @@ extension UIView {
     func setBackgroundParchment() {
         self.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "parchment"))
     }
+    
+    func roundCorners(size: CGSize,
+                      corners: UIRectCorner,
+                      radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: CGRect(x: 0,
+                                                    y: 0,
+                                                    width: size.width,
+                                                    height: size.height),
+                                byRoundingCorners: corners,
+                                cornerRadii: CGSize(width: radius,
+                                                    height: radius))
+        let maskLayer = CAShapeLayer()
+        maskLayer.path = path.cgPath
+        self.layer.mask = maskLayer
+    }
 }

@@ -7,11 +7,19 @@
 //
 
 import UIKit
+import RxSwift
 
 class ClassSelectViewController: UIViewController {
     
     private let tableView = UITableView(frame: .zero,
                                         style: .plain)
+    
+    private let leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "back_button_mini").withRenderingMode(.alwaysOriginal),
+                                                    style:.plain,
+                                                    target: self,
+                                                    action: nil)
+    
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +38,7 @@ extension ClassSelectViewController: ViewConfiguration {
     
     func configureViews() {
         navigationItem.title = "Hero Class List"
+        navigationItem.leftBarButtonItem = leftBarButtonItem
         
         tableView.rowHeight = 60
         tableView.separatorInset = .zero
@@ -44,7 +53,13 @@ extension ClassSelectViewController: ViewConfiguration {
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
-    func bindViewModel() {}
+    func bindViewModel() {
+        leftBarButtonItem.rx.tap
+            .observeOn(MainScheduler.instance)
+            .subscribe { [weak self] _ in
+                self?.navigationController?.popViewController(animated: true)
+        }.disposed(by: disposeBag)
+    }
 }
 
 extension ClassSelectViewController: UITableViewDelegate {

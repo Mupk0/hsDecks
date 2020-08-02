@@ -12,9 +12,15 @@ import RxCocoa
 class DeckListViewController: UIViewController {
     
     private let tableView = UITableView(frame: .zero, style: .plain)
-    private let rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
+    private let rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "new_deck_button").withRenderingMode(.alwaysOriginal),
+                                                     style:.plain,
                                                      target: self,
                                                      action: nil)
+    
+    private let leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "back_button_mini").withRenderingMode(.alwaysOriginal),
+                                                    style:.plain,
+                                                    target: self,
+                                                    action: nil)
     
     private let viewModel: DeckListViewModel
     private let disposeBag = DisposeBag()
@@ -46,6 +52,7 @@ extension DeckListViewController: ViewConfiguration {
         
         navigationItem.title = "Full Deck List"
         navigationItem.rightBarButtonItem = rightBarButtonItem
+        navigationItem.leftBarButtonItem = leftBarButtonItem
 
         tableView.separatorInset = .zero
         tableView.setBackgroundParchment()
@@ -85,10 +92,18 @@ extension DeckListViewController: ViewConfiguration {
                 let newDeckViewController = NewDeckViewController()
                 
                 newDeckViewController.newDeck.subscribe(onNext :{ [weak self] deck in
-                    self?.viewModel.addDeck(deckCode: deck.deckCode, deckName: deck.deckName, deckClass: deck.deckClass)
+                    self?.viewModel.addDeck(deckCode: deck.deckCode,
+                                            deckName: deck.deckName,
+                                            deckClass: deck.deckClass)
                     newDeckViewController.dismiss(animated: true)
                 }).disposed(by: strongSelf.disposeBag)
                 self?.present(newDeckViewController, animated: true)
+        }.disposed(by: disposeBag)
+        // MARK: - event handling when back button tapped
+        leftBarButtonItem.rx.tap
+            .observeOn(MainScheduler.instance)
+            .subscribe { [weak self] _ in
+                self?.navigationController?.popViewController(animated: true)
         }.disposed(by: disposeBag)
         // MARK: - subscribe to tableView when item has been deleted, then remove todo to persistent storage via viewmodel
         tableView.rx.itemDeleted

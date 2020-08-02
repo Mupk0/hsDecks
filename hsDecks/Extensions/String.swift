@@ -6,7 +6,7 @@
 //  Copyright © 2020 Dmitry Kulagin. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension String {
     func trim() -> String {
@@ -65,5 +65,19 @@ extension String {
         let c = (self as NSString).character(at: at)
         let s = NSString(format: "%c", c)
         return s as String
+    }
+}
+
+extension String {
+    func size(using font: UIFont,
+              boundingWidth: CGFloat = UIScreen.main.bounds.size.width) -> CGSize {
+        let boundingSize = CGSize(width: boundingWidth,
+                                  height: .greatestFiniteMagnitude)
+        let boundingRect = self.boundingRect(with: boundingSize,
+                                             options: [.usesFontLeading, .usesLineFragmentOrigin],
+                                             attributes: [NSAttributedString.Key.font : font],
+                                             context: nil)
+        return CGSize(width: ceil(boundingRect.width),
+                      height: ceil(boundingRect.height))
     }
 }

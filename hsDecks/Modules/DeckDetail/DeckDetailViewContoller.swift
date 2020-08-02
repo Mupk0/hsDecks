@@ -16,6 +16,10 @@ class DeckDetailViewContoller: UIViewController {
     private let rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action,
                                                      target: self,
                                                      action: nil)
+    private let leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "back_button_mini").withRenderingMode(.alwaysOriginal),
+                                                    style:.plain,
+                                                    target: self,
+                                                    action: nil)
     
     private let viewModel: DeckDetailViewModel
     private let disposeBag = DisposeBag()
@@ -52,6 +56,7 @@ extension DeckDetailViewContoller: ViewConfiguration {
                                             alpha: 1.00)
         
         navigationItem.rightBarButtonItem = rightBarButtonItem
+        navigationItem.leftBarButtonItem = leftBarButtonItem
     }
     
     func setupConstraints() {
@@ -105,6 +110,12 @@ extension DeckDetailViewContoller: ViewConfiguration {
                     self?.present(copyDeckAlert, animated: true, completion: nil)
                     UIPasteboard.general.string = deckCode
                 }).disposed(by: strongSelf.disposeBag)
+        }.disposed(by: disposeBag)
+        // MARK: - event handling when back button tapped
+        leftBarButtonItem.rx.tap
+            .observeOn(MainScheduler.instance)
+            .subscribe { [weak self] _ in
+                self?.navigationController?.popViewController(animated: true)
         }.disposed(by: disposeBag)
     }
 }
