@@ -60,26 +60,35 @@ extension NewDeckViewController: ViewConfiguration {
     
     func setupConstraints() {
         deckNameTextField.translatesAutoresizingMaskIntoConstraints = false
-        deckNameTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
-        deckNameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-        deckNameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        deckNameTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
+                                               constant: 20).isActive = true
+        deckNameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor,
+                                                   constant: 20).isActive = true
+        deckNameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor,
+                                                    constant: -20).isActive = true
         deckNameTextField.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         deckCodeTextField.translatesAutoresizingMaskIntoConstraints = false
         deckCodeTextField.topAnchor.constraint(equalTo: deckNameTextField.bottomAnchor, constant: 10).isActive = true
-        deckCodeTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-        deckCodeTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        deckCodeTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor,
+                                                   constant: 20).isActive = true
+        deckCodeTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor,
+                                                    constant: -20).isActive = true
         deckCodeTextField.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         deckCreateButton.translatesAutoresizingMaskIntoConstraints = false
-        deckCreateButton.topAnchor.constraint(equalTo: deckCodeTextField.bottomAnchor, constant: 10).isActive = true
-        deckCreateButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 45).isActive = true
+        deckCreateButton.topAnchor.constraint(equalTo: deckCodeTextField.bottomAnchor,
+                                              constant: 10).isActive = true
+        deckCreateButton.centerXAnchor.constraint(equalTo: view.centerXAnchor,
+                                                  constant: 45).isActive = true
         deckCreateButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
         deckCreateButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
         
         closeControllerButton.translatesAutoresizingMaskIntoConstraints = false
-        closeControllerButton.topAnchor.constraint(equalTo: deckCodeTextField.bottomAnchor, constant: 10).isActive = true
-        closeControllerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -45).isActive = true
+        closeControllerButton.topAnchor.constraint(equalTo: deckCodeTextField.bottomAnchor,
+                                                   constant: 10).isActive = true
+        closeControllerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor,
+                                                       constant: -45).isActive = true
         closeControllerButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
         closeControllerButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
     }

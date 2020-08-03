@@ -123,22 +123,8 @@ extension DeckDetailViewContoller: ViewConfiguration {
 extension DeckDetailViewContoller: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView,
-                   willDisplayHeaderView view: UIView,
-                   forSection section: Int) {
-        guard let header = view as? UITableViewHeaderFooterView else { return }
-        header.textLabel?.textAlignment = .center
-        header.textLabel?.font = .boldSystemFont(ofSize: 20)
-        header.textLabel?.textColor = .black
-    }
-    
-    func tableView(_ tableView: UITableView,
                    viewForFooterInSection section: Int) -> UIView? {
         let footerView = DeckDetailSectionFooterView()
         return footerView
-    }
-    
-    func tableView(_ tableView: UITableView,
-                   heightForHeaderInSection section: Int) -> CGFloat {
-        return 40
     }
 }

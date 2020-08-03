@@ -107,13 +107,16 @@ extension DeckDetailTableViewCell: ViewConfiguration {
         cardImageView.translatesAutoresizingMaskIntoConstraints = false
         cardImageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         cardImageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        cardImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5).isActive = true
+        cardImageView.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                                constant: -20).isActive = true
         
         cardNameBackgroundView.translatesAutoresizingMaskIntoConstraints = false
         cardNameBackgroundView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         cardNameBackgroundView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        cardNameBackgroundView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40).isActive = true
-        cardNameBackgroundView.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        cardNameBackgroundView.leadingAnchor.constraint(equalTo: leadingAnchor,
+                                                        constant: 40).isActive = true
+        cardNameBackgroundView.trailingAnchor.constraint(equalTo: cardImageView.leadingAnchor,
+                                                         constant: 85).isActive = true
         
         cardNameGradientView.translatesAutoresizingMaskIntoConstraints = false
         cardNameGradientView.topAnchor.constraint(equalTo: topAnchor).isActive = true
@@ -124,7 +127,8 @@ extension DeckDetailTableViewCell: ViewConfiguration {
         cardCostView.translatesAutoresizingMaskIntoConstraints = false
         cardCostView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         cardCostView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        cardCostView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 27).isActive = true
+        cardCostView.leadingAnchor.constraint(equalTo: leadingAnchor,
+                                              constant: 27).isActive = true
         cardCostView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         
         cardCostLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -136,31 +140,39 @@ extension DeckDetailTableViewCell: ViewConfiguration {
         cardNameLabel.translatesAutoresizingMaskIntoConstraints = false
         cardNameLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
         cardNameLabel.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        cardNameLabel.leadingAnchor.constraint(equalTo: cardCostView.trailingAnchor, constant: 5).isActive = true
+        cardNameLabel.leadingAnchor.constraint(equalTo: cardCostView.trailingAnchor,
+                                               constant: 5).isActive = true
         cardNameLabel.trailingAnchor.constraint(equalTo: cardCounterLabel.leadingAnchor).isActive = true
         
         cardCounterLabel.translatesAutoresizingMaskIntoConstraints = false
         cardCounterLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
         cardCounterLabel.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        cardCounterLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -38).isActive = true
+        cardCounterLabel.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                                   constant: -38).isActive = true
         cardCounterLabel.widthAnchor.constraint(equalToConstant: 20).isActive = true
         
         cardRarityColorView.translatesAutoresizingMaskIntoConstraints = false
-        cardRarityColorView.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
-        cardRarityColorView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
+        cardRarityColorView.topAnchor.constraint(equalTo: topAnchor,
+                                                 constant: 10).isActive = true
+        cardRarityColorView.bottomAnchor.constraint(equalTo: bottomAnchor,
+                                                    constant: -10).isActive = true
         cardRarityColorView.widthAnchor.constraint(equalToConstant: 4).isActive = true
-        cardRarityColorView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -34).isActive = true
+        cardRarityColorView.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                                      constant: -34).isActive = true
         
         frontView.translatesAutoresizingMaskIntoConstraints = false
         frontView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         frontView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        frontView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40).isActive = true
-        frontView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40).isActive = true
+        frontView.leadingAnchor.constraint(equalTo: leadingAnchor,
+                                           constant: 40).isActive = true
+        frontView.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                            constant: -40).isActive = true
         
         rightView.translatesAutoresizingMaskIntoConstraints = false
         rightView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         rightView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        rightView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -29).isActive = true
+        rightView.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                            constant: -29).isActive = true
         rightView.widthAnchor.constraint(equalToConstant: 50).isActive = true
     }
     

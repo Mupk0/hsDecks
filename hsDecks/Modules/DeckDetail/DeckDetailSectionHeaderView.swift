@@ -13,17 +13,19 @@ class DeckDetailSectionHeaderView: UIView {
     private let deckNameLabel = UILabel.makeForCardLabel(size: 16,
                                                          color: .white)
     
-    private let deckListTopImageView = UIImageView(image: #imageLiteral(resourceName: "deckListTopNoShadowFinal"))
-    private let deckListBottomImageView = UIImageView(image: #imageLiteral(resourceName: "deckbuilder_frame_top_standard_desktop"))
+    private let deckListTopImageView = UIImageView(image: #imageLiteral(resourceName: "deck_detail_top_frame"))
     private let heroImageView = UIImageView()
     
+    private let topImageRation: CGFloat = 2.859154929577465
+    
     override init(frame: CGRect) {
+        let width = UIScreen.main.bounds.width
         super.init(frame: CGRect(x: 0,
                                  y: 0,
-                                 width: UIScreen.main.bounds.width,
-                                 height: 131))
+                                 width: width,
+                                 height: width / topImageRation))
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -33,9 +35,8 @@ class DeckDetailSectionHeaderView: UIView {
         deckNameLabel.text = deckHeader.deckName
         heroImageView.image = deckHeader.deckClass.portraitImage
         
-        addSubview(deckListTopImageView)
         addSubview(heroImageView)
-        addSubview(deckListBottomImageView)
+        addSubview(deckListTopImageView)
         addSubview(deckNameLabel)
         
         deckListTopImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -45,24 +46,25 @@ class DeckDetailSectionHeaderView: UIView {
         deckListTopImageView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         
         heroImageView.translatesAutoresizingMaskIntoConstraints = false
-        heroImageView.topAnchor.constraint(equalTo: deckListBottomImageView.topAnchor, constant: 23).isActive = true
-        heroImageView.bottomAnchor.constraint(equalTo: deckListBottomImageView.bottomAnchor, constant: -18).isActive = true
-        heroImageView.leadingAnchor.constraint(equalTo: deckListBottomImageView.leadingAnchor, constant: 20).isActive = true
-        heroImageView.trailingAnchor.constraint(equalTo: deckListBottomImageView.trailingAnchor, constant: -25).isActive = true
-        
-        deckListBottomImageView.translatesAutoresizingMaskIntoConstraints = false
-        deckListBottomImageView.topAnchor.constraint(equalTo: topAnchor, constant: 11).isActive = true
-        deckListBottomImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -18).isActive = true
-        deckListBottomImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 19).isActive = true
-        deckListBottomImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -19).isActive = true
+        heroImageView.topAnchor.constraint(equalTo: topAnchor,
+                                           constant: 35).isActive = true
+        heroImageView.bottomAnchor.constraint(equalTo: bottomAnchor,
+                                              constant: -33).isActive = true
+        heroImageView.leadingAnchor.constraint(equalTo: leadingAnchor,
+                                               constant: 33).isActive = true
+        heroImageView.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                                constant: -33).isActive = true
         
         deckNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        deckNameLabel.topAnchor.constraint(equalTo: deckListBottomImageView.topAnchor, constant: 10).isActive = true
-        deckNameLabel.bottomAnchor.constraint(equalTo: deckListBottomImageView.bottomAnchor, constant: -30).isActive = true
-        deckNameLabel.leadingAnchor.constraint(equalTo: deckListBottomImageView.leadingAnchor, constant: 40).isActive = true
-        deckNameLabel.trailingAnchor.constraint(equalTo: deckListBottomImageView.trailingAnchor, constant: 40).isActive = true
-        
-        deckListBottomImageView.contentMode = .scaleToFill
+        deckNameLabel.topAnchor.constraint(equalTo: topAnchor,
+                                           constant: 21).isActive = true
+        deckNameLabel.bottomAnchor.constraint(equalTo: bottomAnchor,
+                                              constant: -48).isActive = true
+        deckNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor,
+                                               constant: 59).isActive = true
+        deckNameLabel.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                                constant: 59).isActive = true
+
         deckListTopImageView.contentMode = .scaleAspectFit
         heroImageView.contentMode = .scaleAspectFill
     }

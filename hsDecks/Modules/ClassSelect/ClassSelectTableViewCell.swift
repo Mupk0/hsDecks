@@ -57,9 +57,12 @@ extension ClassSelectTableViewCell: ViewConfiguration {
     
     func setupConstraints() {
         classImageView.translatesAutoresizingMaskIntoConstraints = false
-        classImageView.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
-        classImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
-        classImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
+        classImageView.topAnchor.constraint(equalTo: topAnchor,
+                                            constant: 10).isActive = true
+        classImageView.bottomAnchor.constraint(equalTo: bottomAnchor,
+                                               constant: -10).isActive = true
+        classImageView.leadingAnchor.constraint(equalTo: leadingAnchor,
+                                                constant: 10).isActive = true
         classImageView.widthAnchor.constraint(equalToConstant: 40).isActive = true
         
         classNameLabel.translatesAutoresizingMaskIntoConstraints = false
