@@ -65,6 +65,7 @@ extension DeckCategoryViewController: UITableViewDataSource {
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.textLabel?.font = Font.belwe(size: 20).font
+        cell.textLabel?.textColor = .black
         cell.textLabel?.text = DeckTypeSections.init(id: indexPath.row).name
         cell.selectionStyle = .none
         cell.backgroundColor = .clear
