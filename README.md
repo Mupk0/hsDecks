@@ -3,8 +3,11 @@
 -------
 ## Description
 hsDecks is an iOS Project for parsing Hearthstone decks and save to device.
+.https://ibb.co/f1jzSzM
 
-![DeckExample](https://i.ibb.co/d05jhhF/2020-05-19-18-42-05.png "Deck Example")
+![DeckList](https://i.ibb.co/7Ysdzdv/Simulator-Screen-Shot-i-Phone-11-Pro-Max-2020-08-04-at-09-29-59.png "Deck List")
+
+![DeckExample](https://i.ibb.co/bFRfsxJ/Simulator-Screen-Shot-i-Phone-11-Pro-Max-2020-08-04-at-09-30-21.png "Deck Example")
 
 #### Architecture
 - MVVM
@@ -26,6 +29,9 @@ pod install
 - Xcode 11.0+
 - Swift 5.0+
 
-## Author
+## License
 
+hsDecks is released under the [MIT license](https://github.com/Mupk0/hsDecks/tree/dev/LICENSE).
+
+All Hearthstone assets are copyright © Blizzard Entertainment.
 Kulagin Dmitry, mupk0@outlook.com
