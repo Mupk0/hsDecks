@@ -4,9 +4,9 @@
 ## Description
 hsDecks is an deck manager for Hearthstone on iOS.
 
-![DeckList](https://i.ibb.co/7Ysdzdv/Simulator-Screen-Shot-i-Phone-11-Pro-Max-2020-08-04-at-09-29-59.png "Deck List")
+<img src="https://i.ibb.co/7Ysdzdv/Simulator-Screen-Shot-i-Phone-11-Pro-Max-2020-08-04-at-09-29-59.png" width="300">
 
-![DeckExample](https://i.ibb.co/bFRfsxJ/Simulator-Screen-Shot-i-Phone-11-Pro-Max-2020-08-04-at-09-30-21.png "Deck Example")
+<img src="https://i.ibb.co/bFRfsxJ/Simulator-Screen-Shot-i-Phone-11-Pro-Max-2020-08-04-at-09-30-21.png" width="300">
 
 #### Architecture
 - MVVM
